@@ -83,5 +83,10 @@ namespace PBO_KelD08
                 textBox2.PasswordChar = '*';
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

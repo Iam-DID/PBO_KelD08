@@ -153,6 +153,7 @@
             HelpButton = true;
             Name = "FormLogin";
             Text = "Form1";
+            Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }
