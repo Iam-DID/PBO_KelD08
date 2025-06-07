@@ -1,4 +1,4 @@
-namespace PBO_KelD08
+namespace PBO_KelD08.JAPRI
 {
     internal static class Program
     {

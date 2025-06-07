@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Npgsql;
 
-namespace PBO_KelD08
+namespace PBO_KelD08.JAPRI.Controller
 {
     public class Register
     {
@@ -38,7 +38,7 @@ namespace PBO_KelD08
                                      //Regex.IsMatch(password, "[A-Z]") &&
                                      //Regex.IsMatch(password, "[a-z]") &&
                                      Regex.IsMatch(password, "[0-9]");
-                                    //Regex.IsMatch(password, "[^a-zA-Z0-9]");
+            //Regex.IsMatch(password, "[^a-zA-Z0-9]");
 
             if (validasi_password)
             {
@@ -61,7 +61,7 @@ namespace PBO_KelD08
                         return false;
                     }
                 }
-                else 
+                else
                 {
                     NpgsqlConnection connect = new NpgsqlConnection("Host=localhost;Username=postgres;password=syadid1306;Database=JAPRI;port=5432");
                     connect.Open();

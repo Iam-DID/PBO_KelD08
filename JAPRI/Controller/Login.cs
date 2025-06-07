@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
 
-namespace PBO_KelD08
+namespace PBO_KelD08.JAPRI.Controller
 {
     public class Login
     {
@@ -27,7 +27,8 @@ namespace PBO_KelD08
             NpgsqlDataReader data = npgsqlCommand.ExecuteReader();
             bool result = data.Read();
             data.Close();
-            if (result) {
+            if (result)
+            {
                 connect.Close();
                 return true;
             }
@@ -37,15 +38,15 @@ namespace PBO_KelD08
                 NpgsqlDataReader data2 = npgsqlCommand.ExecuteReader();
                 bool result2 = data2.Read();
                 data2.Close();
-                if (result2) 
+                if (result2)
                 {
                     connect.Close();
                     return true;
                 }
-                else 
-                { 
+                else
+                {
                     connect.Close();
-                    return false; 
+                    return false;
                 }
 
             }

@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
-    <Folder Include="Resources\" />
+    <Folder Include="JAPRI\Resources\" />
   </ItemGroup>
 
 </Project>

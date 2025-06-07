@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PBO_KelD08.Model
+namespace PBO_KelD08.JAPRI.Model
 {
     internal class M_Login
     {
