@@ -35,10 +35,10 @@ namespace PBO_KelD08.JAPRI.Controller
         public bool TambahAkun()
         {
             bool validasi_password = password.Length == 8 &&
-                                     //Regex.IsMatch(password, "[A-Z]") &&
+                                     Regex.IsMatch(password, "[A-Z]") &&
                                      //Regex.IsMatch(password, "[a-z]") &&
                                      Regex.IsMatch(password, "[0-9]");
-            //Regex.IsMatch(password, "[^a-zA-Z0-9]");
+                                     //Regex.IsMatch(password, "[^a-zA-Z0-9]");
 
             if (validasi_password)
             {
