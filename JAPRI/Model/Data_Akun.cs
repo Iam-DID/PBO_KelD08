@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace PBO_KelD08.JAPRI.Model
 {
-    internal class M_Login
+    internal class Data_Akun
     {
-        [Key]
-        public int id { get; set; }
-        [Required]
-        public string username { get; set; }
-        [Required]
+        public int id_akun { get; set; }
+        public string nim { get; set; }
         public string password { get; set; }
+        public int id_kelas { get; set; }
+        public bool status_asprak { get; set; }
+        public byte [] foto_profil { get; set; }
 
-        [Required]
-        public string email { get; set; }
     }
 }
 
