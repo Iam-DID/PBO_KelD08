@@ -1,6 +1,6 @@
 ﻿namespace PBO_KelD08
 {
-    partial class FormLogin
+    partial class V_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            username = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
+            password = new TextBox();
             button1 = new Button();
             label4 = new Label();
             linkLabel1 = new LinkLabel();
@@ -49,14 +49,14 @@
             label1.TabIndex = 0;
             label1.Text = "LOGIN";
             // 
-            // textBox1
+            // username
             // 
-            textBox1.Font = new Font("Segoe UI", 11F);
-            textBox1.Location = new Point(313, 154);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            username.Font = new Font("Segoe UI", 11F);
+            username.Location = new Point(313, 154);
+            username.Name = "username";
+            username.Size = new Size(156, 27);
+            username.TabIndex = 1;
+            username.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
@@ -79,15 +79,15 @@
             label3.TabIndex = 3;
             label3.Text = "Password";
             // 
-            // textBox2
+            // password
             // 
-            textBox2.Font = new Font("Segoe UI", 11F);
-            textBox2.Location = new Point(313, 207);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(156, 27);
-            textBox2.TabIndex = 4;
-            textBox2.TextChanged += textBox2_TextChanged;
+            password.Font = new Font("Segoe UI", 11F);
+            password.Location = new Point(313, 207);
+            password.Name = "password";
+            password.PasswordChar = '*';
+            password.Size = new Size(156, 27);
+            password.TabIndex = 4;
+            password.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
@@ -136,7 +136,7 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // FormLogin
+            // V_Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,15 +145,15 @@
             Controls.Add(linkLabel1);
             Controls.Add(label4);
             Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(password);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(username);
             Controls.Add(label1);
             HelpButton = true;
-            Name = "FormLogin";
+            Name = "V_Login";
             Text = "Form1";
-            Load += FormLogin_Load;
+            Load += V_Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,13 +161,13 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
         private Button button1;
         private Label label4;
         private LinkLabel linkLabel1;
         private Button button2;
+        public TextBox username;
+        public TextBox password;
     }
 }

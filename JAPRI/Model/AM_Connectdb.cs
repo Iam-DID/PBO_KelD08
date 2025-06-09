@@ -10,13 +10,13 @@ namespace PBO_KelD08.JAPRI.Model
 {
     public abstract class AM_Connectdb
     {
-        protected string db = "db";
+        protected string db = "Host=localhost;Username=postgres;password=syadid1306;Database=JAPRI;port=5432";
         private NpgsqlConnection Conn;
         protected NpgsqlConnection conn
         {
             get
             {
-                return this.Conn;
+                return Conn;
             }
             set
             {
@@ -54,15 +54,15 @@ namespace PBO_KelD08.JAPRI.Model
             }
         }
 
-        public DataTable Execute_With_Return(NpgsqlCommand Querry)
-        {
-            using (conn = new NpgsqlConnection(db))
-            {
-                Querry.Connection = conn;
-                DataTable Data = new DataTable();
-                Data.Load(Querry.ExecuteReader());
-                return Data;
-            }
-        }
+        //public DataTable Execute_With_Return(NpgsqlCommand Querry)
+        //{
+        //    using (conn = new NpgsqlConnection(db))
+        //    {
+        //        Querry.Connection = conn;
+        //        DataTable Data = new DataTable();
+        //        Data.Load(Querry.ExecuteReader());
+        //        return Data;
+        //    }
+        //}
     }
 }

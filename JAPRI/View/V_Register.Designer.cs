@@ -1,6 +1,6 @@
 ﻿namespace PBO_KelD08
 {
-    partial class FormRegister
+    partial class V_Register
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            peran = new ComboBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            username = new TextBox();
             label3 = new Label();
-            textBox2 = new TextBox();
+            password = new TextBox();
             label4 = new Label();
-            textBox3 = new TextBox();
+            password_validation = new TextBox();
             label5 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -53,17 +53,17 @@
             label1.TabIndex = 0;
             label1.Text = "Register";
             // 
-            // comboBox1
+            // peran
             // 
-            comboBox1.Font = new Font("Segoe UI", 11F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Asisten Praktikum", "Ketua Kelas" });
-            comboBox1.Location = new Point(324, 110);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(156, 28);
-            comboBox1.TabIndex = 1;
-            comboBox1.Text = "- Pilih Peran -";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            peran.Font = new Font("Segoe UI", 11F);
+            peran.FormattingEnabled = true;
+            peran.Items.AddRange(new object[] { "Asisten Praktikum", "Ketua Kelas" });
+            peran.Location = new Point(324, 110);
+            peran.Name = "peran";
+            peran.Size = new Size(156, 28);
+            peran.TabIndex = 1;
+            peran.Text = "- Pilih Peran -";
+            peran.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -75,14 +75,14 @@
             label2.TabIndex = 2;
             label2.Text = "Register Sebagai";
             // 
-            // textBox1
+            // username
             // 
-            textBox1.Font = new Font("Segoe UI", 11F);
-            textBox1.Location = new Point(324, 164);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 27);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            username.Font = new Font("Segoe UI", 11F);
+            username.Location = new Point(324, 164);
+            username.Name = "username";
+            username.Size = new Size(156, 27);
+            username.TabIndex = 1;
+            username.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
@@ -95,15 +95,15 @@
             label3.Text = "NIM";
             label3.Click += label3_Click;
             // 
-            // textBox2
+            // password
             // 
-            textBox2.Font = new Font("Segoe UI", 11F);
-            textBox2.Location = new Point(324, 217);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(156, 27);
-            textBox2.TabIndex = 4;
-            textBox2.TextChanged += textBox2_TextChanged;
+            password.Font = new Font("Segoe UI", 11F);
+            password.Location = new Point(324, 217);
+            password.Name = "password";
+            password.PasswordChar = '*';
+            password.Size = new Size(156, 27);
+            password.TabIndex = 4;
+            password.TextChanged += textBox2_TextChanged;
             // 
             // label4
             // 
@@ -116,15 +116,15 @@
             label4.Text = "Password";
             label4.Click += label4_Click;
             // 
-            // textBox3
+            // password_validation
             // 
-            textBox3.Font = new Font("Segoe UI", 11F);
-            textBox3.Location = new Point(324, 270);
-            textBox3.Name = "textBox3";
-            textBox3.PasswordChar = '*';
-            textBox3.Size = new Size(156, 27);
-            textBox3.TabIndex = 6;
-            textBox3.TextChanged += textBox3_TextChanged;
+            password_validation.Font = new Font("Segoe UI", 11F);
+            password_validation.Location = new Point(324, 270);
+            password_validation.Name = "password_validation";
+            password_validation.PasswordChar = '*';
+            password_validation.Size = new Size(156, 27);
+            password_validation.TabIndex = 6;
+            password_validation.TextChanged += textBox3_TextChanged;
             // 
             // label5
             // 
@@ -186,7 +186,7 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click_1;
             // 
-            // FormRegister
+            // V_Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -196,17 +196,17 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label5);
-            Controls.Add(textBox3);
+            Controls.Add(password_validation);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(password);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(username);
             Controls.Add(label2);
-            Controls.Add(comboBox1);
+            Controls.Add(peran);
             Controls.Add(label1);
-            Name = "FormRegister";
+            Name = "V_Register";
             Text = "FormRegister";
-            Load += FormRegister_Load;
+            Load += V_Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,17 +214,18 @@
         #endregion
 
         private Label label1;
-        private ComboBox comboBox1;
         private Label label2;
-        private TextBox textBox1;
         private Label label3;
         private TextBox textBox2;
         private Label label4;
-        private TextBox textBox3;
         private Label label5;
         private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
+        public TextBox username;
+        public ComboBox peran;
+        public TextBox password;
+        public TextBox password_validation;
     }
 }

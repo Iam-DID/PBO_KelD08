@@ -1,4 +1,5 @@
 using PBO_KelD08.JAPRI;
+using PBO_KelD08.JAPRI.Controller;
 
 namespace PBO_KelD08
 {
@@ -9,11 +10,12 @@ namespace PBO_KelD08
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {   
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormLogin());
+            C_LandingPage c_LandingPage = new C_LandingPage();
+            Application.Run(c_LandingPage.v_Login);
         }
     }
 }
