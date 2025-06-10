@@ -10,17 +10,25 @@ using System.Windows.Forms;
 
 namespace PBO_KelD08.JAPRI.View
 {
-    public partial class asprak : Form
+    public partial class LAnding_page : Form
     {
-        public asprak()
+        public LAnding_page()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void LAnding_page_Load(object sender, EventArgs e)
         {
-            Ketkel ketkel = new Ketkel();
-            ketkel.Show();
+
+        }
+
+        private void LAnding_page_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
