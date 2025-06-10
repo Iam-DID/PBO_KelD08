@@ -10,17 +10,15 @@ using System.Windows.Forms;
 
 namespace PBO_KelD08.JAPRI.View
 {
-    public partial class asprak : Form
+    public partial class Login_Page : Form
     {
-        public asprak()
+        public Login_Page()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Ketkel ketkel = new Ketkel();
-            ketkel.Show();
 
         }
     }
