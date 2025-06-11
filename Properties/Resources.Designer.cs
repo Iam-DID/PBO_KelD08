@@ -73,6 +73,16 @@ namespace PBO_KelD08.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ganti_Password {
+            get {
+                object obj = ResourceManager.GetObject("Ganti Password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lading_page {
             get {
                 object obj = ResourceManager.GetObject("Lading page", resourceCulture);
@@ -143,6 +153,17 @@ namespace PBO_KelD08.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Setting_Profile {
+            get {
+                object obj = ResourceManager.GetObject("Setting Profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+
         internal static System.Drawing.Bitmap Tampilan_info_kelas {
             get {
                 object obj = ResourceManager.GetObject("Tampilan info kelas", resourceCulture);
