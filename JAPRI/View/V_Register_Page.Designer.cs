@@ -1,6 +1,6 @@
 ﻿namespace PBO_KelD08.JAPRI.View
 {
-    partial class Register_Page
+    partial class V_Register_Page
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            button1 = new Button();
+            peran = new ComboBox();
+            username = new TextBox();
+            password = new TextBox();
+            password_validation = new TextBox();
+            register = new Button();
             label1 = new Label();
             linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
-            // comboBox1
+            // peran
             // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(533, 185);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(344, 23);
-            comboBox1.TabIndex = 0;
+            peran.FlatStyle = FlatStyle.Flat;
+            peran.FormattingEnabled = true;
+            peran.Items.AddRange(new object[] { "Asisten Praktikum", "Ketua Kelas" });
+            peran.Location = new Point(533, 185);
+            peran.Name = "peran";
+            peran.Size = new Size(344, 23);
+            peran.TabIndex = 0;
+            peran.Text = "-- Pilih Peran --";
             // 
-            // textBox1
+            // username
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(533, 257);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(344, 16);
-            textBox1.TabIndex = 1;
+            username.BorderStyle = BorderStyle.None;
+            username.Location = new Point(533, 257);
+            username.Name = "username";
+            username.Size = new Size(344, 16);
+            username.TabIndex = 1;
             // 
-            // textBox2
+            // password
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(536, 325);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(135, 16);
-            textBox2.TabIndex = 2;
+            password.BorderStyle = BorderStyle.None;
+            password.Location = new Point(536, 325);
+            password.Name = "password";
+            password.PasswordChar = '*';
+            password.Size = new Size(135, 16);
+            password.TabIndex = 2;
             // 
-            // textBox3
+            // password_validation
             // 
-            textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Location = new Point(737, 326);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(132, 16);
-            textBox3.TabIndex = 3;
+            password_validation.BorderStyle = BorderStyle.None;
+            password_validation.Location = new Point(737, 326);
+            password_validation.Name = "password_validation";
+            password_validation.Size = new Size(132, 16);
+            password_validation.TabIndex = 3;
             // 
-            // button1
+            // register
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(536, 383);
-            button1.Name = "button1";
-            button1.Size = new Size(333, 42);
-            button1.TabIndex = 4;
-            button1.Text = "Sign Up";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            register.BackColor = Color.Transparent;
+            register.FlatAppearance.BorderSize = 0;
+            register.FlatStyle = FlatStyle.Flat;
+            register.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            register.ForeColor = Color.White;
+            register.Location = new Point(536, 383);
+            register.Name = "register";
+            register.Size = new Size(333, 42);
+            register.TabIndex = 4;
+            register.Text = "Sign Up";
+            register.UseVisualStyleBackColor = false;
+            register.Click += button1_Click;
             // 
             // label1
             // 
@@ -113,7 +115,7 @@
             linkLabel1.Text = "Sign In";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // Register_Page
+            // V_Register_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -121,26 +123,26 @@
             ClientSize = new Size(960, 540);
             Controls.Add(label1);
             Controls.Add(linkLabel1);
-            Controls.Add(button1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(comboBox1);
+            Controls.Add(register);
+            Controls.Add(password_validation);
+            Controls.Add(password);
+            Controls.Add(username);
+            Controls.Add(peran);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Register_Page";
+            Name = "V_Register_Page";
             Text = "Register_Page";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private ComboBox comboBox1;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private Button button1;
+        private Button register;
         private Label label1;
         private LinkLabel linkLabel1;
+        public ComboBox peran;
+        public TextBox username;
+        public TextBox password;
+        public TextBox password_validation;
     }
 }

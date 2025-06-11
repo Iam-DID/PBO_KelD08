@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBO_KelD08.JAPRI.Controller;
 
 namespace PBO_KelD08.JAPRI.View
 {
-    public partial class LAnding_page : Form
+    public partial class V_Landing_Page : Form
     {
-        public LAnding_page()
+        C_LandingPage Controller;
+        public V_Landing_Page(C_LandingPage controller)
         {
             InitializeComponent();
+            this.Controller = controller;
         }
 
         private void LAnding_page_Load(object sender, EventArgs e)
@@ -29,7 +32,12 @@ namespace PBO_KelD08.JAPRI.View
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Controller.switch_to_register(this);
+        }
 
+        private void login_Click(object sender, EventArgs e)
+        {
+            Controller.switch_to_login(this);
         }
     }
 }

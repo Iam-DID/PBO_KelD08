@@ -15,11 +15,11 @@ namespace PBO_KelD08
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //C_LandingPage c_LandingPage = new C_LandingPage();
-            //Application.Run(c_LandingPage.v_Login);
+            C_LandingPage c_LandingPage = new C_LandingPage();
+            Application.Run(c_LandingPage.v_Landing);
 
-            asprak asprak = new asprak();
-            Application.Run(asprak);
+            //asprak asprak = new asprak();
+            //Application.Run(new V_Landing_Page());
         }
     }
 }

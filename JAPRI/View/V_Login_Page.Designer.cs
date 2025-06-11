@@ -1,6 +1,6 @@
 ﻿namespace PBO_KelD08.JAPRI.View
 {
-    partial class Login_Page
+    partial class V_Login_Page
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            login = new Button();
+            username = new TextBox();
+            password = new TextBox();
             linkLabel1 = new LinkLabel();
             label1 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // login
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            button1.Location = new Point(94, 346);
-            button1.Name = "button1";
-            button1.Size = new Size(324, 45);
-            button1.TabIndex = 0;
-            button1.Text = "Sign In";
-            button1.UseVisualStyleBackColor = false;
+            login.BackColor = Color.Transparent;
+            login.FlatAppearance.BorderSize = 0;
+            login.FlatStyle = FlatStyle.Flat;
+            login.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            login.Location = new Point(94, 346);
+            login.Name = "login";
+            login.Size = new Size(324, 45);
+            login.TabIndex = 0;
+            login.Text = "Sign In";
+            login.UseVisualStyleBackColor = false;
+            login.Click += login_Click;
             // 
-            // textBox1
+            // username
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(81, 212);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(337, 18);
-            textBox1.TabIndex = 1;
-            textBox1.TextChanged += textBox1_TextChanged;
+            username.BorderStyle = BorderStyle.None;
+            username.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            username.Location = new Point(81, 212);
+            username.Name = "username";
+            username.Size = new Size(337, 18);
+            username.TabIndex = 1;
+            username.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // password
             // 
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(85, 281);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(299, 18);
-            textBox2.TabIndex = 2;
+            password.BorderStyle = BorderStyle.None;
+            password.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            password.Location = new Point(85, 281);
+            password.Name = "password";
+            password.PasswordChar = '*';
+            password.Size = new Size(299, 18);
+            password.TabIndex = 2;
             // 
             // linkLabel1
             // 
@@ -80,6 +81,7 @@
             linkLabel1.TabIndex = 3;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Sign Up";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
             // 
@@ -92,7 +94,7 @@
             label1.TabIndex = 4;
             label1.Text = "Belum punya akun/";
             // 
-            // Login_Page
+            // V_Login_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -100,12 +102,12 @@
             ClientSize = new Size(960, 540);
             Controls.Add(label1);
             Controls.Add(linkLabel1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
+            Controls.Add(password);
+            Controls.Add(username);
+            Controls.Add(login);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Login_Page";
+            Name = "V_Login_Page";
             Text = "Login_Page";
             ResumeLayout(false);
             PerformLayout();
@@ -113,10 +115,10 @@
 
         #endregion
 
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Button login;
         private LinkLabel linkLabel1;
         private Label label1;
+        public TextBox username;
+        public TextBox password;
     }
 }

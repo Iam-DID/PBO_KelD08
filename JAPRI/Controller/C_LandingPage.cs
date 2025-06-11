@@ -13,15 +13,17 @@ namespace PBO_KelD08.JAPRI.Controller
 {
     public class C_LandingPage
     {
-        public V_Login v_Login;
-        public V_Register v_Register;
+        public V_Landing_Page v_Landing;
+        public V_Login_Page v_Login;
+        public V_Register_Page v_Register;
         M_Akun m_Akun = new M_Akun();
 
         public C_LandingPage()
         {
-            v_Login = new V_Login(this);
+            v_Landing = new V_Landing_Page(this);
+            v_Login = new V_Login_Page(this);
             v_Login.Location = new Point(0, 102);
-            v_Register = new V_Register(this);
+            v_Register = new V_Register_Page(this);
         }
 
         public void login_validation()
@@ -36,19 +38,19 @@ namespace PBO_KelD08.JAPRI.Controller
             {
                 if (M_Session.status_asprak)
                 {
-                    MessageBox.Show("Login Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    asprak dashboard = new asprak();
-                    v_Login.Hide();
-                    dashboard.ShowDialog();
-                    v_Login.Close();
+                    //MessageBox.Show("Login Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //asprak dashboard = new asprak();
+                    //v_Login.Hide();
+                    //dashboard.ShowDialog();
+                    //v_Login.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Login Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Ketkel dashboard = new Ketkel();
-                    v_Login.Hide();
-                    dashboard.ShowDialog();
-                    v_Login.Close();
+                    //MessageBox.Show("Login Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Ketkel dashboard = new Ketkel();
+                    //v_Login.Hide();
+                    //dashboard.ShowDialog();
+                    //v_Login.Close();
                 }
             }
             else
@@ -106,10 +108,16 @@ namespace PBO_KelD08.JAPRI.Controller
             
         }
 
-        public void switch_to_register()
+        public void switch_to_register(Form form)
         {
-            v_Login.Hide();
-            v_Register.ShowDialog();
+            form.Hide();
+            //v_Register.ShowDialog();
+            v_Register.Show();
+        }
+        public void switch_to_login(Form form)
+        {
+            form.Hide();
+            //v_Login.ShowDialog();
             v_Login.Show();
         }
     }
