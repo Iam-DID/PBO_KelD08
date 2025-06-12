@@ -1,6 +1,6 @@
 ﻿namespace PBO_KelD08.JAPRI.View
 {
-    partial class V_Info_Kelas
+    partial class V_Info_Jadwal_Page
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Info_Kelas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Info_Jadwal_Page));
+            dateTimePicker1 = new DateTimePicker();
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             jadwal = new Button();
             infokelas = new Button();
             button1 = new Button();
-            matkul = new Label();
-            kelas = new Label();
             SuspendLayout();
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CalendarTitleBackColor = SystemColors.ControlText;
+            dateTimePicker1.CalendarTitleForeColor = SystemColors.ButtonShadow;
+            dateTimePicker1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(742, 19);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(183, 39);
+            dateTimePicker1.TabIndex = 1;
             // 
             // button4
             // 
             button4.BackColor = Color.Transparent;
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(89, 367);
+            button4.Location = new Point(87, 367);
             button4.Name = "button4";
             button4.Size = new Size(79, 23);
-            button4.TabIndex = 17;
+            button4.TabIndex = 29;
             button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -55,10 +65,10 @@
             button3.BackColor = Color.Transparent;
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
-            button3.Location = new Point(89, 323);
+            button3.Location = new Point(87, 323);
             button3.Name = "button3";
             button3.Size = new Size(128, 23);
-            button3.TabIndex = 16;
+            button3.TabIndex = 28;
             button3.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -66,10 +76,10 @@
             button2.BackColor = Color.Transparent;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(90, 280);
+            button2.Location = new Point(88, 280);
             button2.Name = "button2";
             button2.Size = new Size(127, 23);
-            button2.TabIndex = 15;
+            button2.TabIndex = 27;
             button2.UseVisualStyleBackColor = false;
             // 
             // jadwal
@@ -77,10 +87,10 @@
             jadwal.BackColor = Color.Transparent;
             jadwal.FlatAppearance.BorderSize = 0;
             jadwal.FlatStyle = FlatStyle.Flat;
-            jadwal.Location = new Point(90, 236);
+            jadwal.Location = new Point(88, 236);
             jadwal.Name = "jadwal";
-            jadwal.Size = new Size(78, 23);
-            jadwal.TabIndex = 14;
+            jadwal.Size = new Size(140, 23);
+            jadwal.TabIndex = 26;
             jadwal.UseVisualStyleBackColor = false;
             // 
             // infokelas
@@ -88,10 +98,10 @@
             infokelas.BackColor = Color.Transparent;
             infokelas.FlatAppearance.BorderSize = 0;
             infokelas.FlatStyle = FlatStyle.Flat;
-            infokelas.Location = new Point(89, 195);
+            infokelas.Location = new Point(87, 195);
             infokelas.Name = "infokelas";
-            infokelas.Size = new Size(139, 28);
-            infokelas.TabIndex = 13;
+            infokelas.Size = new Size(104, 28);
+            infokelas.TabIndex = 25;
             infokelas.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -99,67 +109,39 @@
             button1.BackColor = Color.Transparent;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(89, 153);
+            button1.Location = new Point(87, 153);
             button1.Name = "button1";
             button1.Size = new Size(59, 26);
-            button1.TabIndex = 12;
+            button1.TabIndex = 24;
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
-            // matkul
-            // 
-            matkul.AutoSize = true;
-            matkul.BackColor = Color.Transparent;
-            matkul.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            matkul.ForeColor = Color.Gray;
-            matkul.Location = new Point(265, 25);
-            matkul.Name = "matkul";
-            matkul.Size = new Size(359, 32);
-            matkul.TabIndex = 18;
-            matkul.Text = "Algoritma dan Pemrogaman 2";
-            // 
-            // kelas
-            // 
-            kelas.AutoSize = true;
-            kelas.BackColor = Color.Transparent;
-            kelas.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            kelas.ForeColor = Color.Gray;
-            kelas.Location = new Point(788, 25);
-            kelas.Name = "kelas";
-            kelas.Size = new Size(74, 32);
-            kelas.TabIndex = 19;
-            kelas.Text = "Kelas";
-            // 
-            // V_Info_Kelas
+            // V_Info_Jadwal_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
-            Controls.Add(kelas);
-            Controls.Add(matkul);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(jadwal);
             Controls.Add(infokelas);
             Controls.Add(button1);
+            Controls.Add(dateTimePicker1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "V_Info_Kelas";
-            Text = "V_Info_Kelas";
+            Name = "V_Info_Jadwal_Page";
+            Text = "V_Info_Jadwal_Page";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
+        private DateTimePicker dateTimePicker1;
         private Button button4;
         private Button button3;
         private Button button2;
         private Button jadwal;
         private Button infokelas;
         private Button button1;
-        private Label matkul;
-        private Label kelas;
     }
 }

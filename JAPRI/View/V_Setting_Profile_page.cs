@@ -32,8 +32,6 @@ namespace PBO_KelD08.JAPRI.View
                 nim.Text = akun.nim;
                 prodi.Text = akun.nama_prodi;
             }
-
-
             kelaspraktikum.DataSource = null;
             kelaspraktikum.DataSource = kelasList;
             kelaspraktikum.DisplayMember = "nama_kelas";  // properti yang ditampilkan
@@ -54,7 +52,6 @@ namespace PBO_KelD08.JAPRI.View
         {
 
         }
-
         private void ubah_Click(object sender, EventArgs e)
         {
             Controller.Updatekelas();
