@@ -118,41 +118,46 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Ganti Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ganti Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="polosan bg landing page" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\polosan bg landing page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background landing page" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background landing page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tampilan info kelas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tampilan info kelas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Register" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Register.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pprofil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pprofil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Login Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Login Page fix" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login Page fix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Profil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Profil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Tampilan info kelas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tampilan info kelas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Setting Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Setting Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-
+  <data name="Ganti Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ganti Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lading page" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lading page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background landing page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background landing page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login Page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login Page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Setting Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Setting Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Tampilan ruang kelas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tampilan ruang kelas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="polosan bg landing page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\polosan bg landing page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Profil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tampilan ganti jadwal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tampilan ganti jadwal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pprofil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pprofil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login Page fix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login Page fix.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jadwal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jadwal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

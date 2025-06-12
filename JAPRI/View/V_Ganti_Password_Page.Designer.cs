@@ -80,9 +80,9 @@
             ubah.BackColor = Color.Transparent;
             ubah.FlatAppearance.BorderSize = 0;
             ubah.FlatStyle = FlatStyle.Flat;
-            ubah.Location = new Point(264, 369);
+            ubah.Location = new Point(268, 369);
             ubah.Name = "ubah";
-            ubah.Size = new Size(142, 38);
+            ubah.Size = new Size(138, 38);
             ubah.TabIndex = 4;
             ubah.UseVisualStyleBackColor = false;
             // 

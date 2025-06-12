@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Info_Kelas));
             button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             jadwal = new Button();
             infokelas = new Button();
             button1 = new Button();
-            label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            matkul = new Label();
+            kelas = new Label();
             SuspendLayout();
             // 
             // button4
@@ -104,37 +105,38 @@
             button1.TabIndex = 12;
             button1.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // matkul
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(269, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(296, 28);
-            label1.TabIndex = 18;
-            label1.Text = "Algoritma dan Pemrogaman 2";
+            matkul.AutoSize = true;
+            matkul.BackColor = Color.Transparent;
+            matkul.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            matkul.ForeColor = Color.Gray;
+            matkul.Location = new Point(265, 25);
+            matkul.Name = "matkul";
+            matkul.Size = new Size(359, 32);
+            matkul.TabIndex = 18;
+            matkul.Text = "Algoritma dan Pemrogaman 2";
             // 
-            // dateTimePicker1
+            // kelas
             // 
-            dateTimePicker1.CalendarTitleBackColor = SystemColors.ControlText;
-            dateTimePicker1.CalendarTitleForeColor = Color.Transparent;
-            dateTimePicker1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            dateTimePicker1.Location = new Point(602, 62);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(299, 32);
-            dateTimePicker1.TabIndex = 19;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            kelas.AutoSize = true;
+            kelas.BackColor = Color.Transparent;
+            kelas.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kelas.ForeColor = Color.Gray;
+            kelas.Location = new Point(788, 25);
+            kelas.Name = "kelas";
+            kelas.Size = new Size(74, 32);
+            kelas.TabIndex = 19;
+            kelas.Text = "Kelas";
             // 
             // V_Info_Kelas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Tampilan_info_kelas;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(label1);
+            Controls.Add(kelas);
+            Controls.Add(matkul);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -156,7 +158,7 @@
         private Button jadwal;
         private Button infokelas;
         private Button button1;
-        private Label label1;
-        private DateTimePicker dateTimePicker1;
+        private Label matkul;
+        private Label kelas;
     }
 }

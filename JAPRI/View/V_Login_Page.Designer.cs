@@ -40,10 +40,10 @@
             login.BackColor = Color.Transparent;
             login.FlatAppearance.BorderSize = 0;
             login.FlatStyle = FlatStyle.Flat;
-            login.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            login.Location = new Point(94, 346);
+            login.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            login.Location = new Point(112, 354);
             login.Name = "login";
-            login.Size = new Size(324, 45);
+            login.Size = new Size(284, 32);
             login.TabIndex = 0;
             login.Text = "Sign In";
             login.UseVisualStyleBackColor = false;
