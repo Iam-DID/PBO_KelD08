@@ -71,6 +71,7 @@ namespace PBO_KelD08.JAPRI.View
             {
                 nama.Text = akun.nama_mahasiswa;
                 prodi.Text = akun.nama_prodi;
+                kelaspraktikum.Text = akun.nama_kelas;
 
                 if (akun.foto_profil != null && akun.foto_profil.Length > 0)
                 {
@@ -96,6 +97,12 @@ namespace PBO_KelD08.JAPRI.View
         private void setingprofil_Click(object sender, EventArgs e)
         {
             Controller.switch_to_edit();
+            RefreshForm();
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

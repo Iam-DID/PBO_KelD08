@@ -181,6 +181,7 @@
             Logout.TabIndex = 17;
             Logout.Text = "Log Out";
             Logout.UseVisualStyleBackColor = false;
+            Logout.Click += Logout_Click;
             // 
             // nim
             // 
@@ -236,6 +237,9 @@
             // 
             // foto
             // 
+            foto.BackColor = Color.Transparent;
+            foto.BackgroundImageLayout = ImageLayout.Zoom;
+            foto.ErrorImage = null;
             foto.Location = new Point(293, 195);
             foto.Name = "foto";
             foto.Size = new Size(100, 100);
@@ -246,12 +250,15 @@
             // updatephoto
             // 
             updatephoto.BackColor = Color.Transparent;
+            updatephoto.BackgroundImageLayout = ImageLayout.Zoom;
             updatephoto.FlatAppearance.BorderSize = 0;
+            updatephoto.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            updatephoto.FlatAppearance.MouseOverBackColor = Color.Transparent;
             updatephoto.FlatStyle = FlatStyle.Flat;
             updatephoto.Font = new Font("Segoe UI", 12F);
-            updatephoto.Location = new Point(354, 264);
+            updatephoto.Location = new Point(380, 280);
             updatephoto.Name = "updatephoto";
-            updatephoto.Size = new Size(39, 31);
+            updatephoto.Size = new Size(23, 31);
             updatephoto.TabIndex = 23;
             updatephoto.Text = "+";
             updatephoto.UseVisualStyleBackColor = false;

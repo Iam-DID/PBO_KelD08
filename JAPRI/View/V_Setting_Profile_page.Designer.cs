@@ -129,8 +129,8 @@
         private Label nama;
         private Label prodi;
         private Label nim;
-        private ComboBox kelaspraktikum;
         private Button ubah;
         private Button batal;
+        public ComboBox kelaspraktikum;
     }
 }

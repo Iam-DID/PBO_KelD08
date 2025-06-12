@@ -52,25 +52,38 @@ namespace PBO_KelD08.JAPRI.Controller
             };
             return akun;
         }
-        public void show_photo(Data_Akun akun,PictureBox foto)
+        public void Updatekelas() 
         {
-            if (akun.foto_profil != null)
+            if (v_setting_profile_page.kelaspraktikum.SelectedItem != null)
             {
-                using (MemoryStream ms = new MemoryStream(akun.foto_profil))
-                {
-                    foto.Image = Image.FromStream(ms);
-                }
-            }
-            else
-            {
-                //foto.Image = Properties.Resources.Foto_Default;
+                int selectedId = Convert.ToInt32(v_setting_profile_page.kelaspraktikum.SelectedValue);
+                //MessageBox.Show("ID yang dipilih: " + selectedId);
+                m_profil.Updatekelas(selectedId, M_Session.id_session);
             }
         }
+        //public void show_photo(Data_Akun akun,PictureBox foto)
+        //{
+        //    if (akun.foto_profil != null)
+        //    {
+        //        using (MemoryStream ms = new MemoryStream(akun.foto_profil))
+        //        {
+        //            foto.Image = Image.FromStream(ms);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //foto.Image = Properties.Resources.Foto_Default;
+        //    }
+        //}
         public void RoundPicturebox(PictureBox pb)
         {
             System.Drawing.Drawing2D.GraphicsPath path = new GraphicsPath();
             path.AddEllipse(0, 0, pb.Width, pb.Height);
             pb.Region = new Region(path);
+        }
+        public void updatepassword()
+        {
+
         }
         public void upload_photo()
         {
@@ -83,6 +96,7 @@ namespace PBO_KelD08.JAPRI.Controller
                 //string imagePath = openFileDialog.FileName;
                 byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
                 m_profil.Updatephoto(imageBytes,Convert.ToInt32(M_Session.id_session));
+                //v_profil.RefreshForm();
                 //pictureBox1.Image = Image.FromFile(imagePath);
                 //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -91,11 +105,29 @@ namespace PBO_KelD08.JAPRI.Controller
             }
 
         }
+        public List<Data_Kelas> Getlistkelas()
+        {
+            DataTable data = m_profil.getkelas();
+            List<Data_Kelas> list = new List<Data_Kelas>();
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                Data_Kelas data_kelas = new Data_Kelas
+                {
+                    id_kelas = (int)data.Rows[i]["id_kelas"],
+                    nama_kelas = data.Rows[i]["nama_kelas"].ToString(),
+                    kode_mata_kuliah = data.Rows[i]["kode_mata_kuliah"].ToString(),
+                };
+                //data_Layanan.display_price = $"Rp{data_Layanan.harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
+                list.Add(data_kelas);
+            }
+            //Conn.Close();
+            return list;
+        }
         public void switch_to_edit()
         {
             //v_Register.ShowDialog();
             v_setting_profile_page = new V_Setting_Profile_page(this);
-            v_setting_profile_page.Show();
+            v_setting_profile_page.ShowDialog();
         }
 
     }

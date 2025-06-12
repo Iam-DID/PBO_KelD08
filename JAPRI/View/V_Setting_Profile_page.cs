@@ -23,6 +23,7 @@ namespace PBO_KelD08.JAPRI.View
 
         private void V_Setting_Profile_page_Load(object sender, EventArgs e)
         {
+            List<Data_Kelas> kelasList = Controller.Getlistkelas();
             Data_Akun akun = Controller.GetData();
 
             if (akun != null)
@@ -31,6 +32,12 @@ namespace PBO_KelD08.JAPRI.View
                 nim.Text = akun.nim;
                 prodi.Text = akun.nama_prodi;
             }
+
+
+            kelaspraktikum.DataSource = null;
+            kelaspraktikum.DataSource = kelasList;
+            kelaspraktikum.DisplayMember = "nama_kelas";  // properti yang ditampilkan
+            kelaspraktikum.ValueMember = "id_kelas";      // properti yang digunakan sebagai nilai
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,7 +57,8 @@ namespace PBO_KelD08.JAPRI.View
 
         private void ubah_Click(object sender, EventArgs e)
         {
-
+            Controller.Updatekelas();
+            this.Close();
         }
 
         private void batal_Click_1(object sender, EventArgs e)

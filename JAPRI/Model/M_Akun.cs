@@ -58,15 +58,9 @@ namespace PBO_KelD08.JAPRI.Model
 
         public void Update(object data, int id)
         {
-            Data_Akun akun = data as Data_Akun;
-            Execute_No_Return($"Update Akun set foto_profil ={akun.foto_profil} where id_akun = {id})");
         }
 
-        public void Updatekelas(object data, int id)
-        {
-            Data_Akun akun = data as Data_Akun;
-            Execute_No_Return($"Update Akun set id_kelas = {akun.id_kelas} where id_akun = {id})");
-        }
+
 
     }
 }

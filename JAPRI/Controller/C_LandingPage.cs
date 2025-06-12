@@ -50,6 +50,7 @@ namespace PBO_KelD08.JAPRI.Controller
                     //v_Profil.show();
                     v_Login.Hide();
                     v_Profil.ShowDialog();
+                    v_Login.Show();
 
                 }
                 else
@@ -97,6 +98,7 @@ namespace PBO_KelD08.JAPRI.Controller
                         //v_Login.Location = new Point(0, 102);
                         MessageBox.Show("Register Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         v_Register.Hide();
+                        v_Login.Show();
                     }
                     catch
                     {

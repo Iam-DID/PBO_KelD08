@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,29 @@ namespace PBO_KelD08.JAPRI.Model
         }
         public DataTable Carikelas(int id_kelas)
         {
-            DataTable data = Execute_With_Return("SELECT k.nama_kelas" +
-                                                 "from kelas k" +
-                                                 "join akun a m on (a.id_kelas=k.id_kelas) " +
+            DataTable data = Execute_With_Return("SELECT k.nama_kelas " +
+                                                 "from kelas k " +
+                                                 "join akun a on (a.id_kelas=k.id_kelas) " +
                                                  $"where a.id_kelas = {id_kelas} ");
 
             return data;
         }
-        public List<object> Get() {
-            return new List<object>();
+        //public List<Data_Kelas> Get() {
+        //    List<Data_Kelas> listkelas = new List<Data_Kelas>();
+
+
+
+        //    return new List<Data_Kelas>();
+        //}
+
+        public DataTable getkelas()
+        {
+            DataTable data = Execute_With_Return("Select * from kelas");
+            return data;
         }
+        
+        public List<object> Get()
+        { return new List<object>(); }
 
         public void Insert(object obj) { }
 
@@ -39,7 +53,6 @@ namespace PBO_KelD08.JAPRI.Model
         {
             Execute_No_Return($"Update Akun set foto_profil = {data} where id_akun = {id}");
         }
-
         public void Updatephoto(byte[] data, int id)
         {
             string query = "UPDATE Akun SET foto_profil = @foto WHERE id_akun = @id";
@@ -51,6 +64,10 @@ namespace PBO_KelD08.JAPRI.Model
             Execute_No_Return1(query, parameters);
         }
 
+        public void Updatekelas(int id_kelas,int id_akun)
+        {
+            Execute_No_Return($"Update Akun set id_kelas = {id_kelas} where id_akun = {id_akun}");
+        }
         public void Updatekelas(object data, int id)
         {
             Data_Akun akun = data as Data_Akun;
