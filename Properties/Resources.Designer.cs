@@ -169,5 +169,15 @@ namespace PBO_KelD08.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tampilan_ruang_kelas {
+            get {
+                object obj = ResourceManager.GetObject("Tampilan ruang kelas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
