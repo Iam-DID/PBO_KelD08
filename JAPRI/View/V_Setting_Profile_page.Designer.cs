@@ -90,6 +90,7 @@
             ubah.Size = new Size(142, 41);
             ubah.TabIndex = 6;
             ubah.UseVisualStyleBackColor = false;
+            ubah.Click += ubah_Click;
             // 
             // batal
             // 
@@ -101,6 +102,7 @@
             batal.Size = new Size(146, 41);
             batal.TabIndex = 5;
             batal.UseVisualStyleBackColor = false;
+            batal.Click += batal_Click_1;
             // 
             // V_Setting_Profile_page
             // 
@@ -127,8 +129,8 @@
         private Label nama;
         private Label prodi;
         private Label nim;
-        private ComboBox kelaspraktikum;
         private Button ubah;
         private Button batal;
+        public ComboBox kelaspraktikum;
     }
 }
