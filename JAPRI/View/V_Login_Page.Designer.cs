@@ -109,6 +109,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Login_Page";
             Text = "Login_Page";
+            Load += V_Login_Page_Load;
             ResumeLayout(false);
             PerformLayout();
         }

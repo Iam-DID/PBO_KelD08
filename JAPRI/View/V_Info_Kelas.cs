@@ -21,5 +21,10 @@ namespace PBO_KelD08.JAPRI.View
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

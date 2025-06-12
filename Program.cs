@@ -19,7 +19,7 @@ namespace PBO_KelD08
             Application.Run(c_LandingPage.v_Landing);
 
             //asprak asprak = new asprak();
-            //Application.Run(new V_Landing_Page());
+            //Application.Run(new testfoto());
         }
     }
 }

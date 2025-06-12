@@ -54,6 +54,21 @@ namespace PBO_KelD08.JAPRI.Model
             }
         }
 
+        public void Execute_No_Return1(string query, Dictionary<string, object> parameters)
+        {
+            using (conn = new NpgsqlConnection(db))
+            {
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
         //public DataTable Execute_With_Return(NpgsqlCommand Querry)
         //{
         //    using (conn = new NpgsqlConnection(db))
