@@ -13,6 +13,7 @@ namespace PBO_KelD08.JAPRI.View
 {
     public partial class V_Ruang_Kelas_Page : Form
     {
+
         C_Ruang_Kelas Controller;
         public V_Ruang_Kelas_Page(C_Ruang_Kelas controller)
         {
