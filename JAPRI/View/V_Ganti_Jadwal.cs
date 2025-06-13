@@ -11,28 +11,23 @@ using PBO_KelD08.JAPRI.Controller;
 
 namespace PBO_KelD08.JAPRI.View
 {
-    public partial class V_Info_Jadwal_Page : Form
+    public partial class V_Ganti_Jadwal : Form
     {
-        C_Jadwal Controller;
-        public V_Info_Jadwal_Page(C_Jadwal controller)
+        C_Ganti_Jadwal Controller;
+        public V_Ganti_Jadwal(C_Ganti_Jadwal controller)
         {
             InitializeComponent();
             this.Controller = controller;
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Controller.SwitchToProfile();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Controller.SwitchToGantiJadwal();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void infokelas_Click(object sender, EventArgs e)
@@ -42,12 +37,17 @@ namespace PBO_KelD08.JAPRI.View
 
         private void jadwal_Click(object sender, EventArgs e)
         {
-
+            Controller.SwitchToInfoJadwal();
         }
 
         private void ruangkelas_Click(object sender, EventArgs e)
         {
             Controller.SwitchToRuangKelas();
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -36,11 +36,12 @@ namespace PBO_KelD08.JAPRI.View
 
             if (akun != null)
             {
-                nama.Text = akun.nama_mahasiswa;
+                string namaDepan = akun.nama_mahasiswa.Split(' ')[0];
+                nama.Text = namaDepan;
                 nim.Text = akun.nim;
                 prodi.Text = akun.nama_prodi;
                 kelaspraktikum.Text = akun.nama_kelas;
-                password.Text = "*****";
+                password.Text = "********";
 
                 if (akun.foto_profil != null)
                 {
@@ -58,7 +59,8 @@ namespace PBO_KelD08.JAPRI.View
 
             if (akun != null)
             {
-                nama.Text = akun.nama_mahasiswa;
+                string namaDepan = akun.nama_mahasiswa.Split(' ')[0];
+                nama.Text = namaDepan;
                 prodi.Text = akun.nama_prodi;
 
             }
@@ -69,7 +71,8 @@ namespace PBO_KelD08.JAPRI.View
             Data_Akun akun = Controller.GetData();
             if (akun != null)
             {
-                nama.Text = akun.nama_mahasiswa;
+                string namaDepan = akun.nama_mahasiswa.Split(' ')[0];
+                nama.Text = namaDepan;
                 prodi.Text = akun.nama_prodi;
                 kelaspraktikum.Text = akun.nama_kelas;
 
@@ -103,6 +106,58 @@ namespace PBO_KelD08.JAPRI.View
         private void Logout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gantipassword_Click(object sender, EventArgs e)
+        {
+            Controller.switch_to_gantipassword();
+            RefreshForm();
+        }
+
+        private void infokelas_Click(object sender, EventArgs e)
+        {
+            bool cek = Controller.ceklengkap();
+            if (cek)
+            {
+                Controller.SwitchToInfoKelas();
+            }
+        }
+
+        private void jadwal_Click(object sender, EventArgs e)
+        {
+            bool cek = Controller.ceklengkap();
+            if (cek)
+            {
+                Controller.SwitchToInfoJadwal();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool cek = Controller.ceklengkap();
+            if (cek)
+            {
+                Controller.SwitchToRuangKelas();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bool cek = Controller.ceklengkap();
+            if (cek)
+            {
+                Controller.SwitchToGantiJadwal();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

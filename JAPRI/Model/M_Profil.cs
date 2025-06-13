@@ -51,7 +51,8 @@ namespace PBO_KelD08.JAPRI.Model
 
         public void Update(object data, int id)
         {
-            Execute_No_Return($"Update Akun set foto_profil = {data} where id_akun = {id}");
+            Data_Akun akun = data as Data_Akun;
+            Execute_No_Return($"Update Akun set password = '{akun.password}' where id_akun = {id}");
         }
         public void Updatephoto(byte[] data, int id)
         {

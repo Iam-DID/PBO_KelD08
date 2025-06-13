@@ -59,6 +59,7 @@
             button4.Size = new Size(79, 23);
             button4.TabIndex = 11;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -70,6 +71,7 @@
             button3.Size = new Size(128, 23);
             button3.TabIndex = 10;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -81,6 +83,7 @@
             button2.Size = new Size(127, 23);
             button2.TabIndex = 9;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // jadwal
             // 
@@ -92,6 +95,7 @@
             jadwal.Size = new Size(78, 23);
             jadwal.TabIndex = 8;
             jadwal.UseVisualStyleBackColor = false;
+            jadwal.Click += jadwal_Click;
             // 
             // infokelas
             // 
@@ -103,6 +107,7 @@
             infokelas.Size = new Size(101, 28);
             infokelas.TabIndex = 7;
             infokelas.UseVisualStyleBackColor = false;
+            infokelas.Click += infokelas_Click;
             // 
             // button1
             // 
@@ -114,6 +119,7 @@
             button1.Size = new Size(146, 26);
             button1.TabIndex = 6;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // nama
             // 
@@ -167,6 +173,7 @@
             gantipassword.TabIndex = 16;
             gantipassword.Text = "Ganti Password";
             gantipassword.UseVisualStyleBackColor = false;
+            gantipassword.Click += gantipassword_Click;
             // 
             // Logout
             // 

@@ -8,7 +8,7 @@ using Npgsql;
 
 namespace PBO_KelD08.JAPRI.Model
 {
-    public abstract class AM_Connectdb
+    public abstract class AM_Connectdb 
     {
         protected string db = "Host=localhost;Username=postgres;password=Rohmad_25;Database=JAPRI;port=5432";
         private NpgsqlConnection Conn;

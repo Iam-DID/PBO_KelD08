@@ -39,9 +39,9 @@
             register.FlatStyle = FlatStyle.Flat;
             register.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             register.ForeColor = Color.White;
-            register.Location = new Point(59, 348);
+            register.Location = new Point(57, 348);
             register.Name = "register";
-            register.Size = new Size(72, 32);
+            register.Size = new Size(79, 32);
             register.TabIndex = 0;
             register.Text = "Sign Up";
             register.UseVisualStyleBackColor = false;
@@ -54,7 +54,7 @@
             login.FlatStyle = FlatStyle.Flat;
             login.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             login.ForeColor = Color.White;
-            login.Location = new Point(184, 348);
+            login.Location = new Point(188, 346);
             login.Name = "login";
             login.Size = new Size(77, 33);
             login.TabIndex = 1;
