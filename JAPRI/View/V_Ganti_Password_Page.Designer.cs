@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             password = new TextBox();
-            passwordbaru = new TextBox();
-            Konfirmasipassword = new TextBox();
+            newpassword = new TextBox();
+            password_validation = new TextBox();
             batal = new Button();
             ubah = new Button();
             SuspendLayout();
@@ -45,23 +45,23 @@
             password.TabIndex = 0;
             password.TextChanged += textBox1_TextChanged;
             // 
-            // passwordbaru
+            // newpassword
             // 
-            passwordbaru.BorderStyle = BorderStyle.None;
-            passwordbaru.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            passwordbaru.Location = new Point(79, 228);
-            passwordbaru.Name = "passwordbaru";
-            passwordbaru.Size = new Size(339, 22);
-            passwordbaru.TabIndex = 1;
+            newpassword.BorderStyle = BorderStyle.None;
+            newpassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            newpassword.Location = new Point(79, 228);
+            newpassword.Name = "newpassword";
+            newpassword.Size = new Size(339, 22);
+            newpassword.TabIndex = 1;
             // 
-            // Konfirmasipassword
+            // password_validation
             // 
-            Konfirmasipassword.BorderStyle = BorderStyle.None;
-            Konfirmasipassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Konfirmasipassword.Location = new Point(79, 296);
-            Konfirmasipassword.Name = "Konfirmasipassword";
-            Konfirmasipassword.Size = new Size(339, 22);
-            Konfirmasipassword.TabIndex = 2;
+            password_validation.BorderStyle = BorderStyle.None;
+            password_validation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            password_validation.Location = new Point(79, 296);
+            password_validation.Name = "password_validation";
+            password_validation.Size = new Size(339, 22);
+            password_validation.TabIndex = 2;
             // 
             // batal
             // 
@@ -85,6 +85,7 @@
             ubah.Size = new Size(138, 38);
             ubah.TabIndex = 4;
             ubah.UseVisualStyleBackColor = false;
+            ubah.Click += ubah_Click_1;
             // 
             // V_Ganti_Password_Page
             // 
@@ -94,8 +95,8 @@
             ClientSize = new Size(491, 467);
             Controls.Add(ubah);
             Controls.Add(batal);
-            Controls.Add(Konfirmasipassword);
-            Controls.Add(passwordbaru);
+            Controls.Add(password_validation);
+            Controls.Add(newpassword);
             Controls.Add(password);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Ganti_Password_Page";
@@ -106,11 +107,11 @@
         }
 
         #endregion
-
-        private TextBox password;
         private TextBox passwordbaru;
-        private TextBox Konfirmasipassword;
         private Button batal;
         private Button ubah;
+        public TextBox password;
+        public TextBox newpassword;
+        public TextBox password_validation;
     }
 }

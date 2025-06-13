@@ -11,13 +11,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PBO_KelD08.JAPRI.Controller
 {
-    public class C_LandingPage
+    public class C_LandingPage 
     {
+        private C_Main_Menu mainMenu = new C_Main_Menu();
+
         public V_Landing_Page v_Landing;
         public V_Login_Page v_Login;
         public V_Register_Page v_Register;
-        public V_Profil v_Profil;
-        public C_Profile Controller2 = new C_Profile();
+        //public V_Profil v_Profil;
+        //public C_Profile Controller2 = new C_Profile(mainmenu);
         M_Akun m_Akun = new M_Akun();
 
         public C_LandingPage()
@@ -26,7 +28,7 @@ namespace PBO_KelD08.JAPRI.Controller
             v_Login = new V_Login_Page(this);
             v_Login.Location = new Point(0, 102);
             v_Register = new V_Register_Page(this);
-            v_Profil = new V_Profil(Controller2);
+            //v_Profil = new V_Profil(Controller2);
 
         }
 
@@ -48,9 +50,7 @@ namespace PBO_KelD08.JAPRI.Controller
                     //dashboard.ShowDialog();
                     //v_Login.Close();
                     //v_Profil.show();
-                    v_Login.Hide();
-                    v_Profil.ShowDialog();
-                    v_Login.Show();
+                    mainMenu.SwitchForm(v_Login, mainMenu.ProfileController.GetView());
 
                 }
                 else
