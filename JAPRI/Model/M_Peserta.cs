@@ -27,6 +27,7 @@ namespace PBO_KelD08.JAPRI.Model
             {
                 Data_Peserta_Kelas data_peserta = new Data_Peserta_Kelas
                 {
+                    no=i+1,
                     id = (int)data.Rows[i]["id"],
                     nim = data.Rows[i]["nim"].ToString(),
                     nama_mahasiswa = data.Rows[i]["nama_mahasiswa"].ToString(),

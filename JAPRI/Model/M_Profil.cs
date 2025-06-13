@@ -24,7 +24,8 @@ namespace PBO_KelD08.JAPRI.Model
             DataTable data = Execute_With_Return("SELECT k.nama_kelas " +
                                                  "from kelas k " +
                                                  "join akun a on (a.id_kelas=k.id_kelas) " +
-                                                 $"where a.id_kelas = {id_kelas} ");
+                                                 "join mata_kuliah mk on (k.kode_mata_kuliah=mk.kode_mata_kuliah) " +
+                                                 $"where a.id_kelas = {id_kelas} and mk.status_praktikum = True ");
 
             return data;
         }

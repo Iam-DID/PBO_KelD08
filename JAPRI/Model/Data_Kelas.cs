@@ -8,6 +8,7 @@ namespace PBO_KelD08.JAPRI.Model
 {
     public class Data_Kelas
     {
+        public int no { get; set; }
         public int id_kelas {  get; set; }
         public string kode_mata_kuliah { get; set; }
         public string nama_kelas { get; set; }

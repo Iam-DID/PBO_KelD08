@@ -35,6 +35,8 @@
             jadwal = new Button();
             infokelas = new Button();
             profil = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // logout
@@ -109,12 +111,21 @@
             profil.UseVisualStyleBackColor = false;
             profil.Click += profil_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(269, 90);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(628, 354);
+            dataGridView1.TabIndex = 24;
+            // 
             // V_Ruang_Kelas_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(dataGridView1);
             Controls.Add(logout);
             Controls.Add(gantijadwal);
             Controls.Add(ruangkelas);
@@ -125,6 +136,7 @@
             Name = "V_Ruang_Kelas_Page";
             Text = "V_Info_Kelas_Page";
             Load += V_Ruang_Kelas_Page_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -136,5 +148,6 @@
         private Button jadwal;
         private Button infokelas;
         private Button profil;
+        private DataGridView dataGridView1;
     }
 }

@@ -28,26 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Info_Jadwal_Page));
-            dateTimePicker1 = new DateTimePicker();
             button4 = new Button();
             button3 = new Button();
             ruangkelas = new Button();
             jadwal = new Button();
             infokelas = new Button();
             button1 = new Button();
+            semester = new Label();
+            kelas = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CalendarTitleBackColor = SystemColors.ControlText;
-            dateTimePicker1.CalendarTitleForeColor = SystemColors.ButtonShadow;
-            dateTimePicker1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(742, 19);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(183, 39);
-            dateTimePicker1.TabIndex = 1;
             // 
             // button4
             // 
@@ -121,33 +112,71 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // semester
+            // 
+            semester.AutoSize = true;
+            semester.BackColor = Color.Transparent;
+            semester.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            semester.ForeColor = Color.Gray;
+            semester.Location = new Point(871, 22);
+            semester.Name = "semester";
+            semester.Size = new Size(24, 32);
+            semester.TabIndex = 32;
+            semester.Text = "-";
+            // 
+            // kelas
+            // 
+            kelas.AutoSize = true;
+            kelas.BackColor = Color.Transparent;
+            kelas.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kelas.ForeColor = Color.Gray;
+            kelas.Location = new Point(742, 22);
+            kelas.Name = "kelas";
+            kelas.Size = new Size(132, 32);
+            kelas.TabIndex = 31;
+            kelas.Text = "Semester :";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(277, 99);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(618, 360);
+            dataGridView1.TabIndex = 33;
+            // 
             // V_Info_Jadwal_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.Tampilan_info_kelas_rev;
             ClientSize = new Size(960, 540);
+            Controls.Add(dataGridView1);
+            Controls.Add(semester);
+            Controls.Add(kelas);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(ruangkelas);
             Controls.Add(jadwal);
             Controls.Add(infokelas);
             Controls.Add(button1);
-            Controls.Add(dateTimePicker1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Info_Jadwal_Page";
             Text = "V_Info_Jadwal_Page";
+            Load += V_Info_Jadwal_Page_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private DateTimePicker dateTimePicker1;
         private Button button4;
         private Button button3;
         private Button ruangkelas;
         private Button jadwal;
         private Button infokelas;
         private Button button1;
+        public Label semester;
+        private Label kelas;
+        public DataGridView dataGridView1;
     }
 }
