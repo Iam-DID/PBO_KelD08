@@ -104,6 +104,7 @@
             button1.Size = new Size(59, 26);
             button1.TabIndex = 12;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // matkul
             // 

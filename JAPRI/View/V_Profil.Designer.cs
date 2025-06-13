@@ -44,6 +44,9 @@
             prodi = new Label();
             kelaspraktikum = new Label();
             password = new Label();
+            foto = new PictureBox();
+            updatephoto = new Button();
+            ((System.ComponentModel.ISupportInitialize)foto).BeginInit();
             SuspendLayout();
             // 
             // button4
@@ -123,6 +126,7 @@
             nama.Size = new Size(138, 55);
             nama.TabIndex = 12;
             nama.Text = "Nama";
+            nama.Click += nama_Click;
             // 
             // label2
             // 
@@ -148,6 +152,7 @@
             setingprofil.TabIndex = 15;
             setingprofil.Text = "Setting Profil";
             setingprofil.UseVisualStyleBackColor = false;
+            setingprofil.Click += setingprofil_Click;
             // 
             // gantipassword
             // 
@@ -176,6 +181,7 @@
             Logout.TabIndex = 17;
             Logout.Text = "Log Out";
             Logout.UseVisualStyleBackColor = false;
+            Logout.Click += Logout_Click;
             // 
             // nim
             // 
@@ -229,12 +235,43 @@
             password.TabIndex = 21;
             password.Text = "Password";
             // 
+            // foto
+            // 
+            foto.BackColor = Color.Transparent;
+            foto.BackgroundImageLayout = ImageLayout.Zoom;
+            foto.ErrorImage = null;
+            foto.Location = new Point(293, 195);
+            foto.Name = "foto";
+            foto.Size = new Size(100, 100);
+            foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            foto.TabIndex = 22;
+            foto.TabStop = false;
+            // 
+            // updatephoto
+            // 
+            updatephoto.BackColor = Color.Transparent;
+            updatephoto.BackgroundImageLayout = ImageLayout.Zoom;
+            updatephoto.FlatAppearance.BorderSize = 0;
+            updatephoto.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            updatephoto.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            updatephoto.FlatStyle = FlatStyle.Flat;
+            updatephoto.Font = new Font("Segoe UI", 12F);
+            updatephoto.Location = new Point(380, 280);
+            updatephoto.Name = "updatephoto";
+            updatephoto.Size = new Size(23, 31);
+            updatephoto.TabIndex = 23;
+            updatephoto.Text = "+";
+            updatephoto.UseVisualStyleBackColor = false;
+            updatephoto.Click += updatephoto_Click;
+            // 
             // V_Profil
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(updatephoto);
+            Controls.Add(foto);
             Controls.Add(password);
             Controls.Add(kelaspraktikum);
             Controls.Add(prodi);
@@ -253,6 +290,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Profil";
             Text = "Profil";
+            Load += V_Profil_Load;
+            ((System.ComponentModel.ISupportInitialize)foto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,14 +304,16 @@
         private Button jadwal;
         private Button infokelas;
         private Button button1;
-        private Label nama;
         private Label label2;
         private Button setingprofil;
         private Button gantipassword;
         private Button Logout;
-        private Label nim;
-        private Label prodi;
-        private Label kelaspraktikum;
-        private Label password;
+        private Button updatephoto;
+        public Label nama;
+        public Label nim;
+        public Label prodi;
+        public Label kelaspraktikum;
+        public Label password;
+        public PictureBox foto;
     }
 }
