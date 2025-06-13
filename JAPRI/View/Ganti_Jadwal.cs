@@ -21,5 +21,10 @@ namespace PBO_KelD08.JAPRI.View
         {
 
         }
+
+        private void infokelas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

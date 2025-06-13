@@ -99,6 +99,7 @@ namespace PBO_KelD08.JAPRI.View
 
         private void setingprofil_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Kelas Hanya Bisa Diganti Satu Kali", "Perhatian!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Controller.switch_to_edit();
             RefreshForm();
         }

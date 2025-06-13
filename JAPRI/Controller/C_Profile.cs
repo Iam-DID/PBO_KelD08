@@ -34,6 +34,13 @@ namespace PBO_KelD08.JAPRI.Controller
             //v_info_kelas = new V_Info_Kelas(c_info_kelas);
         }
 
+        public int getidkelas()
+        {
+            Data_Akun data = GetData();
+
+
+            return data.id_kelas;
+        }
         public void SwitchToInfoKelas()
         {
             mainMenu.SwitchForm(v_profil, mainMenu.InfoKelasController.GetView());
@@ -89,12 +96,30 @@ namespace PBO_KelD08.JAPRI.Controller
         }
         public void Updatekelas() 
         {
-            if (v_setting_profile_page.kelaspraktikum.SelectedItem != null)
+            DialogResult result=MessageBox.Show("Apakah Anda yakin ingin melanjutkan?","Konfirmasi",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
             {
-                int selectedId = Convert.ToInt32(v_setting_profile_page.kelaspraktikum.SelectedValue);
-                //MessageBox.Show("ID yang dipilih: " + selectedId);
-                m_profil.Updatekelas(selectedId, M_Session.id_session);
+                Data_Akun akun = GetData();
+                if (v_setting_profile_page.kelaspraktikum.SelectedItem != null)
+                {
+                    int selectedId = Convert.ToInt32(v_setting_profile_page.kelaspraktikum.SelectedValue);
+                    if (akun.id_kelas == 0)
+                    {
+                        m_profil.Updatekelas(selectedId, M_Session.id_session);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kelas Telah Dipilih dan Tidak Bisa Diganti", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    //MessageBox.Show("ID yang dipilih: " + selectedId);
+                }
             }
+            else
+            {
+                // Batal
+            }
+           
         }
         public void RoundPicturebox(PictureBox pb)
         {

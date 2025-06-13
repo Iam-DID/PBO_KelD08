@@ -16,8 +16,8 @@ namespace PBO_KelD08
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             C_LandingPage c_LandingPage = new C_LandingPage();
-            //Application.Run(c_LandingPage.v_Landing);
-            Application.Run(new V_Info_Jadwal_Page());
+            Application.Run(c_LandingPage.v_Landing);
+            //Application.Run(new V_Info_Jadwal_Page());
 
             //asprak asprak = new asprak();
             //Application.Run(new testfoto());

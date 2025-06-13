@@ -8,9 +8,9 @@ using Npgsql;
 
 namespace PBO_KelD08.JAPRI.Model
 {
-    public abstract class AM_Connectdb 
+    public class AM_Connectdb : A_ConnectDB
     {
-        protected string db = "Host=localhost;Username=postgres;password=Rohmad_25;Database=JAPRI;port=5432";
+        protected string db = "Host=localhost;Username=postgres;password=syadid1306;Database=JAPRI;port=5432";
         private NpgsqlConnection Conn;
         protected NpgsqlConnection conn
         {
@@ -31,7 +31,7 @@ namespace PBO_KelD08.JAPRI.Model
             }
         }
 
-        public void Execute_No_Return(string Querry)
+        public override void Execute_No_Return(string Querry)
         {
             using (conn = new NpgsqlConnection(db))
             {
@@ -41,7 +41,7 @@ namespace PBO_KelD08.JAPRI.Model
                 cmd.ExecuteNonQuery();
             }
         }
-        public DataTable Execute_With_Return(string Querry)
+        public override DataTable Execute_With_Return(string Querry)
         {
             using (conn = new NpgsqlConnection(db))
             {

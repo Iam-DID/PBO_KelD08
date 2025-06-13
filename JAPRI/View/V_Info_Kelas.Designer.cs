@@ -37,6 +37,9 @@
             profil = new Button();
             matkul = new Label();
             kelas = new Label();
+            dataGridView1 = new DataGridView();
+            kelass = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // logout
@@ -129,11 +132,33 @@
             kelas.BackColor = Color.Transparent;
             kelas.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             kelas.ForeColor = Color.Gray;
-            kelas.Location = new Point(788, 25);
+            kelas.Location = new Point(781, 25);
             kelas.Name = "kelas";
-            kelas.Size = new Size(74, 32);
+            kelas.Size = new Size(88, 32);
             kelas.TabIndex = 19;
-            kelas.Text = "Kelas";
+            kelas.Text = "Kelas :";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(265, 126);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(631, 333);
+            dataGridView1.TabIndex = 20;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // kelass
+            // 
+            kelass.AutoSize = true;
+            kelass.BackColor = Color.Transparent;
+            kelass.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            kelass.ForeColor = Color.Gray;
+            kelass.Location = new Point(864, 25);
+            kelass.Name = "kelass";
+            kelass.Size = new Size(24, 32);
+            kelass.TabIndex = 21;
+            kelass.Text = "-";
+            kelass.Click += label1_Click;
             // 
             // V_Info_Kelas
             // 
@@ -141,6 +166,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(kelass);
+            Controls.Add(dataGridView1);
             Controls.Add(kelas);
             Controls.Add(matkul);
             Controls.Add(logout);
@@ -152,6 +179,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Info_Kelas";
             Text = "V_Info_Kelas";
+            Load += V_Info_Kelas_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,7 +193,9 @@
         private Button jadwal;
         private Button infokelas;
         private Button profil;
-        private Label matkul;
         private Label kelas;
+        public DataGridView dataGridView1;
+        public Label matkul;
+        public Label kelass;
     }
 }

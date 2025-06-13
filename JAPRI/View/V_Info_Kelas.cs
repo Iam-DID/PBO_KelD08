@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 using PBO_KelD08.JAPRI.Controller;
+using PBO_KelD08.JAPRI.Model;
 
 namespace PBO_KelD08.JAPRI.View
 {
@@ -53,6 +55,69 @@ namespace PBO_KelD08.JAPRI.View
         private void logout_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index)
+            //{
+            //    Controller.hapusmahasiswa();
+            //    refreshForm();
+            //}
+        }
+
+        private void V_Info_Kelas_Load(object sender, EventArgs e)
+        {
+            List<Data_Peserta_Kelas> daftarpeserta = Controller.ambilpeserta();
+            Controller.setkelas();
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
+
+            dataGridView1.DataSource = daftarpeserta;
+            //dataGridView1.Columns["id"].HeaderText = "NO. ";
+            dataGridView1.Columns["nim"].HeaderText = "NIM Mahasiswa";
+            dataGridView1.Columns["nama_mahasiswa"].HeaderText = "Nama Mahasiswa";
+            dataGridView1.Columns["ID"].HeaderText = "No. Absen";
+            dataGridView1.Columns["id_kelas"].Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["id"].FillWeight = 30;
+            //dataGridView1.Columns.Add(new DataGridViewButtonColumn
+            //{
+            //    Name = "Delete",
+            //    UseColumnTextForButtonValue = true,
+            //    Text = "Delete"
+            //});
+            //dataGridView1.Columns["Delete"].FillWeight = 30;
+
+        }
+
+        private void refreshForm()
+        {
+            List<Data_Peserta_Kelas> daftarpeserta = Controller.ambilpeserta();
+
+            dataGridView1.Columns.Clear();
+            dataGridView1.DataSource = null;
+
+            dataGridView1.DataSource = daftarpeserta;
+            //dataGridView1.Columns["id"].HeaderText = "NO. ";
+            dataGridView1.Columns["nim"].HeaderText = "NIM Mahasiswa";
+            dataGridView1.Columns["nama_mahasiswa"].HeaderText = "Nama Mahasiswa";
+            dataGridView1.Columns["ID"].HeaderText = "No. Absen";
+            dataGridView1.Columns["id_kelas"].Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["id"].FillWeight = 30;
+            dataGridView1.Columns.Add(new DataGridViewButtonColumn
+            {
+                Name = "Delete",
+                UseColumnTextForButtonValue = true,
+                Text = "Delete"
+            });
+            dataGridView1.Columns["Delete"].FillWeight = 30;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

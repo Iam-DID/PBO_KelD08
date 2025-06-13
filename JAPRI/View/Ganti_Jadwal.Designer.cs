@@ -127,6 +127,7 @@
             infokelas.Size = new Size(104, 28);
             infokelas.TabIndex = 19;
             infokelas.UseVisualStyleBackColor = false;
+            infokelas.Click += infokelas_Click;
             // 
             // button1
             // 

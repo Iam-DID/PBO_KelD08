@@ -28,14 +28,6 @@ namespace PBO_KelD08.JAPRI.Model
 
             return data;
         }
-        //public List<Data_Kelas> Get() {
-        //    List<Data_Kelas> listkelas = new List<Data_Kelas>();
-
-
-
-        //    return new List<Data_Kelas>();
-        //}
-
         public DataTable getkelas()
         {
             DataTable data = Execute_With_Return("Select * from kelas");
@@ -69,10 +61,10 @@ namespace PBO_KelD08.JAPRI.Model
         {
             Execute_No_Return($"Update Akun set id_kelas = {id_kelas} where id_akun = {id_akun}");
         }
-        public void Updatekelas(object data, int id)
-        {
-            Data_Akun akun = data as Data_Akun;
-            Execute_No_Return($"Update Akun set id_kelas = {akun.id_kelas} where id_akun = {id})");
-        }
+        //public void Updatekelas(object data, int id)
+        //{
+        //    Data_Akun akun = data as Data_Akun;
+        //    Execute_No_Return($"Update Akun set id_kelas = {akun.id_kelas} where id_akun = {id})");
+        //}
     }
 }
