@@ -1,6 +1,6 @@
 ﻿namespace PBO_KelD08.JAPRI.View
 {
-    partial class Ganti_Jadwal
+    partial class V_Ganti_Jadwal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ganti_Jadwal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Ganti_Jadwal));
             dateTimePicker1 = new DateTimePicker();
             batal = new Button();
             ubah = new Button();
-            button4 = new Button();
+            logout = new Button();
             button3 = new Button();
-            button2 = new Button();
+            ruangkelas = new Button();
             jadwal = new Button();
             infokelas = new Button();
-            button1 = new Button();
+            Profil = new Button();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -73,16 +73,17 @@
             ubah.TabIndex = 2;
             ubah.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // logout
             // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Location = new Point(87, 368);
-            button4.Name = "button4";
-            button4.Size = new Size(79, 23);
-            button4.TabIndex = 23;
-            button4.UseVisualStyleBackColor = false;
+            logout.BackColor = Color.Transparent;
+            logout.FlatAppearance.BorderSize = 0;
+            logout.FlatStyle = FlatStyle.Flat;
+            logout.Location = new Point(87, 368);
+            logout.Name = "logout";
+            logout.Size = new Size(79, 23);
+            logout.TabIndex = 23;
+            logout.UseVisualStyleBackColor = false;
+            logout.Click += logout_Click;
             // 
             // button3
             // 
@@ -95,16 +96,17 @@
             button3.TabIndex = 22;
             button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // ruangkelas
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(88, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 23);
-            button2.TabIndex = 21;
-            button2.UseVisualStyleBackColor = false;
+            ruangkelas.BackColor = Color.Transparent;
+            ruangkelas.FlatAppearance.BorderSize = 0;
+            ruangkelas.FlatStyle = FlatStyle.Flat;
+            ruangkelas.Location = new Point(88, 281);
+            ruangkelas.Name = "ruangkelas";
+            ruangkelas.Size = new Size(127, 23);
+            ruangkelas.TabIndex = 21;
+            ruangkelas.UseVisualStyleBackColor = false;
+            ruangkelas.Click += ruangkelas_Click;
             // 
             // jadwal
             // 
@@ -116,6 +118,7 @@
             jadwal.Size = new Size(78, 23);
             jadwal.TabIndex = 20;
             jadwal.UseVisualStyleBackColor = false;
+            jadwal.Click += jadwal_Click;
             // 
             // infokelas
             // 
@@ -127,35 +130,37 @@
             infokelas.Size = new Size(104, 28);
             infokelas.TabIndex = 19;
             infokelas.UseVisualStyleBackColor = false;
+            infokelas.Click += infokelas_Click;
             // 
-            // button1
+            // Profil
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(87, 154);
-            button1.Name = "button1";
-            button1.Size = new Size(59, 26);
-            button1.TabIndex = 18;
-            button1.UseVisualStyleBackColor = false;
+            Profil.BackColor = Color.Transparent;
+            Profil.FlatAppearance.BorderSize = 0;
+            Profil.FlatStyle = FlatStyle.Flat;
+            Profil.Location = new Point(87, 154);
+            Profil.Name = "Profil";
+            Profil.Size = new Size(59, 26);
+            Profil.TabIndex = 18;
+            Profil.UseVisualStyleBackColor = false;
+            Profil.Click += button1_Click;
             // 
-            // Ganti_Jadwal
+            // V_Ganti_Jadwal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
-            Controls.Add(button4);
+            Controls.Add(logout);
             Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(ruangkelas);
             Controls.Add(jadwal);
             Controls.Add(infokelas);
-            Controls.Add(button1);
+            Controls.Add(Profil);
             Controls.Add(ubah);
             Controls.Add(batal);
             Controls.Add(dateTimePicker1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Ganti_Jadwal";
+            Name = "V_Ganti_Jadwal";
             Text = "Ganti_Jadwal";
             ResumeLayout(false);
         }
@@ -165,11 +170,11 @@
         private DateTimePicker dateTimePicker1;
         private Button batal;
         private Button ubah;
-        private Button button4;
+        private Button logout;
         private Button button3;
-        private Button button2;
+        private Button ruangkelas;
         private Button jadwal;
         private Button infokelas;
-        private Button button1;
+        private Button Profil;
     }
 }

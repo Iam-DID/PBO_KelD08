@@ -15,15 +15,50 @@ namespace PBO_KelD08.JAPRI.Controller
     
     public class C_Profile
     {
-        V_Profil v_profil;
+        private C_Main_Menu mainMenu;
+
+        //V_Profil v_profil;
         V_Setting_Profile_page v_setting_profile_page;
+        V_Ganti_Password_Page v_ganti_password_page;
         M_Profil m_profil = new M_Profil();
 
-        public C_Profile() { 
+        //C_Info_Kelas c_info_kelas = new C_Info_Kelas();
+
+        public V_Profil v_profil;
+
+        public C_Profile(C_Main_Menu C) { 
+            this.mainMenu = C;
             v_profil = new V_Profil(this);
             v_setting_profile_page = new V_Setting_Profile_page(this);
+            v_ganti_password_page = new V_Ganti_Password_Page(this);
+            //v_info_kelas = new V_Info_Kelas(c_info_kelas);
         }
 
+        public void SwitchToInfoKelas()
+        {
+            mainMenu.SwitchForm(v_profil, mainMenu.InfoKelasController.GetView());
+        }
+
+        public void SwitchToInfoJadwal()
+        {
+            mainMenu.SwitchForm(v_profil, mainMenu.JadwalController.GetView());
+        }
+
+        public void SwitchToRuangKelas()
+        {
+            mainMenu.SwitchForm(v_profil, mainMenu.RuangKelasController.GetView());
+        }
+
+        public void SwitchToGantiJadwal()
+        {
+            mainMenu.SwitchForm(v_profil, mainMenu.GantiJadwalController.GetView());
+        }
+
+        public Form GetView()
+        {
+            return v_profil;
+
+        }
 
         public Data_Akun GetData() {
             string namakelas = "-";
@@ -61,28 +96,54 @@ namespace PBO_KelD08.JAPRI.Controller
                 m_profil.Updatekelas(selectedId, M_Session.id_session);
             }
         }
-        //public void show_photo(Data_Akun akun,PictureBox foto)
-        //{
-        //    if (akun.foto_profil != null)
-        //    {
-        //        using (MemoryStream ms = new MemoryStream(akun.foto_profil))
-        //        {
-        //            foto.Image = Image.FromStream(ms);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        //foto.Image = Properties.Resources.Foto_Default;
-        //    }
-        //}
         public void RoundPicturebox(PictureBox pb)
         {
             System.Drawing.Drawing2D.GraphicsPath path = new GraphicsPath();
             path.AddEllipse(0, 0, pb.Width, pb.Height);
             pb.Region = new Region(path);
         }
+
+        public bool ceklengkap()
+        {
+            Data_Akun akun = GetData();
+            if (akun.id_kelas == null || akun.id_kelas == 0 )
+            {
+                MessageBox.Show("Harap Lengkapi Profile Terlebih Dahulu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
         public void updatepassword()
         {
+            Data_Akun akun = GetData();
+            string passwordlama = v_ganti_password_page.password.Text;
+            string passwordbaru = v_ganti_password_page.newpassword.Text;
+            string passwordvalidation = v_ganti_password_page.password_validation.Text;
+            if (string.IsNullOrEmpty(passwordlama) || string.IsNullOrEmpty(passwordbaru) || passwordbaru != passwordvalidation)
+            {
+                MessageBox.Show("Harap Cek Ulang Form", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                if (passwordlama != akun.password)
+                {
+                    MessageBox.Show("Password Lama Salah", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else 
+                {
+                    akun.password = passwordbaru;
+                    m_profil.Update(akun,M_Session.id_session);
+                    MessageBox.Show("Register Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
 
         }
         public void upload_photo()
@@ -129,6 +190,15 @@ namespace PBO_KelD08.JAPRI.Controller
             v_setting_profile_page = new V_Setting_Profile_page(this);
             v_setting_profile_page.ShowDialog();
         }
+        public void switch_to_gantipassword()
+        {
+            //v_Register.ShowDialog();
+            v_ganti_password_page = new V_Ganti_Password_Page(this);
+            v_ganti_password_page.ShowDialog();
+        }
+
+
+        
 
     }
 }

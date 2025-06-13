@@ -32,7 +32,7 @@
             dateTimePicker1 = new DateTimePicker();
             button4 = new Button();
             button3 = new Button();
-            button2 = new Button();
+            ruangkelas = new Button();
             jadwal = new Button();
             infokelas = new Button();
             button1 = new Button();
@@ -59,6 +59,7 @@
             button4.Size = new Size(79, 23);
             button4.TabIndex = 29;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -70,17 +71,19 @@
             button3.Size = new Size(128, 23);
             button3.TabIndex = 28;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // button2
+            // ruangkelas
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Location = new Point(88, 280);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 23);
-            button2.TabIndex = 27;
-            button2.UseVisualStyleBackColor = false;
+            ruangkelas.BackColor = Color.Transparent;
+            ruangkelas.FlatAppearance.BorderSize = 0;
+            ruangkelas.FlatStyle = FlatStyle.Flat;
+            ruangkelas.Location = new Point(88, 280);
+            ruangkelas.Name = "ruangkelas";
+            ruangkelas.Size = new Size(127, 23);
+            ruangkelas.TabIndex = 27;
+            ruangkelas.UseVisualStyleBackColor = false;
+            ruangkelas.Click += ruangkelas_Click;
             // 
             // jadwal
             // 
@@ -92,6 +95,7 @@
             jadwal.Size = new Size(140, 23);
             jadwal.TabIndex = 26;
             jadwal.UseVisualStyleBackColor = false;
+            jadwal.Click += jadwal_Click;
             // 
             // infokelas
             // 
@@ -103,6 +107,7 @@
             infokelas.Size = new Size(104, 28);
             infokelas.TabIndex = 25;
             infokelas.UseVisualStyleBackColor = false;
+            infokelas.Click += infokelas_Click;
             // 
             // button1
             // 
@@ -114,6 +119,7 @@
             button1.Size = new Size(59, 26);
             button1.TabIndex = 24;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // V_Info_Jadwal_Page
             // 
@@ -123,7 +129,7 @@
             ClientSize = new Size(960, 540);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(ruangkelas);
             Controls.Add(jadwal);
             Controls.Add(infokelas);
             Controls.Add(button1);
@@ -139,7 +145,7 @@
         private DateTimePicker dateTimePicker1;
         private Button button4;
         private Button button3;
-        private Button button2;
+        private Button ruangkelas;
         private Button jadwal;
         private Button infokelas;
         private Button button1;
