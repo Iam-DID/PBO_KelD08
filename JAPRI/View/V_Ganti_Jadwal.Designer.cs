@@ -38,6 +38,10 @@
             jadwal = new Button();
             infokelas = new Button();
             Profil = new Button();
+            ruangan = new ComboBox();
+            jammulai = new ComboBox();
+            button1 = new Button();
+            jamselesai = new ComboBox();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -144,12 +148,53 @@
             Profil.UseVisualStyleBackColor = false;
             Profil.Click += button1_Click;
             // 
+            // ruangan
+            // 
+            ruangan.FormattingEnabled = true;
+            ruangan.Location = new Point(287, 157);
+            ruangan.Name = "ruangan";
+            ruangan.Size = new Size(121, 23);
+            ruangan.TabIndex = 24;
+            ruangan.SelectedIndexChanged += ruangan_SelectedIndexChanged;
+            // 
+            // jammulai
+            // 
+            jammulai.FormattingEnabled = true;
+            jammulai.Location = new Point(575, 157);
+            jammulai.Name = "jammulai";
+            jammulai.Size = new Size(121, 23);
+            jammulai.TabIndex = 25;
+            jammulai.SelectedIndexChanged += jammulai_SelectedIndexChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(287, 221);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 26;
+            button1.Text = "Cari";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // jamselesai
+            // 
+            jamselesai.FormattingEnabled = true;
+            jamselesai.Location = new Point(575, 238);
+            jamselesai.Name = "jamselesai";
+            jamselesai.Size = new Size(121, 23);
+            jamselesai.TabIndex = 27;
+            jamselesai.SelectedIndexChanged += jamselesai_SelectedIndexChanged;
+            // 
             // V_Ganti_Jadwal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(jamselesai);
+            Controls.Add(button1);
+            Controls.Add(jammulai);
+            Controls.Add(ruangan);
             Controls.Add(logout);
             Controls.Add(button3);
             Controls.Add(ruangkelas);
@@ -162,12 +207,11 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Ganti_Jadwal";
             Text = "Ganti_Jadwal";
+            Load += V_Ganti_Jadwal_Load;
             ResumeLayout(false);
         }
 
         #endregion
-
-        private DateTimePicker dateTimePicker1;
         private Button batal;
         private Button ubah;
         private Button logout;
@@ -176,5 +220,10 @@
         private Button jadwal;
         private Button infokelas;
         private Button Profil;
+        public DateTimePicker dateTimePicker1;
+        public ComboBox ruangan;
+        public ComboBox jammulai;
+        private Button button1;
+        public ComboBox jamselesai;
     }
 }

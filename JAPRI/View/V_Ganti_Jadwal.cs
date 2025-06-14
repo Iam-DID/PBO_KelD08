@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBO_KelD08.JAPRI.Controller;
+using PBO_KelD08.JAPRI.Model;
 
 namespace PBO_KelD08.JAPRI.View
 {
@@ -49,5 +50,40 @@ namespace PBO_KelD08.JAPRI.View
         {
             this.Close();
         }
+
+        private void V_Ganti_Jadwal_Load(object sender, EventArgs e)
+        {
+            List<Data_Ruangan> ruanganList = Controller.GetlistRuangan();
+            //Data_Akun akun = Controller.GetData();
+            ruangan.DataSource = null;
+            ruangan.DataSource = ruanganList;
+            ruangan.DisplayMember = "nama_ruangan"; 
+            ruangan.ValueMember = "id_ruangan";     
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Controller.setpilihan();
+        }
+
+        private void ruangan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void jammulai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (jammulai.SelectedItem != null)
+            {
+                string jamMulaiDipilih = jammulai.SelectedItem.ToString();
+                jamselesai.Text = Controller.HitungJamSelesai(jamMulaiDipilih);
+            }
+        }
+
+        private void jamselesai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

@@ -58,6 +58,7 @@ namespace PBO_KelD08.JAPRI.Model
 
         public void Update(object data, int id)
         {
+
         }
 
 

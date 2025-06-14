@@ -17,12 +17,9 @@ namespace PBO_KelD08.JAPRI.Controller
     {
         private C_Main_Menu mainMenu;
 
-        //V_Profil v_profil;
         V_Setting_Profile_page v_setting_profile_page;
         V_Ganti_Password_Page v_ganti_password_page;
         M_Profil m_profil = new M_Profil();
-
-        //C_Info_Kelas c_info_kelas = new C_Info_Kelas();
 
         public V_Profil v_profil;
 
@@ -31,7 +28,6 @@ namespace PBO_KelD08.JAPRI.Controller
             v_profil = new V_Profil(this);
             v_setting_profile_page = new V_Setting_Profile_page(this);
             v_ganti_password_page = new V_Ganti_Password_Page(this);
-            //v_info_kelas = new V_Info_Kelas(c_info_kelas);
         }
 
         public int getidkelas()
@@ -112,12 +108,10 @@ namespace PBO_KelD08.JAPRI.Controller
                     {
                         MessageBox.Show("Kelas Telah Dipilih dan Tidak Bisa Diganti", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    //MessageBox.Show("ID yang dipilih: " + selectedId);
                 }
             }
             else
             {
-                // Batal
             }
            
         }
@@ -165,7 +159,7 @@ namespace PBO_KelD08.JAPRI.Controller
                 {
                     akun.password = passwordbaru;
                     m_profil.Update(akun,M_Session.id_session);
-                    MessageBox.Show("Register Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ganti Password Berhasil", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
@@ -179,15 +173,8 @@ namespace PBO_KelD08.JAPRI.Controller
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                //string imagePath = openFileDialog.FileName;
                 byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
                 m_profil.Updatephoto(imageBytes,Convert.ToInt32(M_Session.id_session));
-                //v_profil.RefreshForm();
-                //pictureBox1.Image = Image.FromFile(imagePath);
-                //pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                // (Opsional) Simpan path ke variable jika mau disimpan nanti
-                // string selectedImagePath = imagePath;
             }
 
         }
@@ -203,7 +190,6 @@ namespace PBO_KelD08.JAPRI.Controller
                     nama_kelas = data.Rows[i]["nama_kelas"].ToString(),
                     kode_mata_kuliah = data.Rows[i]["kode_mata_kuliah"].ToString(),
                 };
-                //data_Layanan.display_price = $"Rp{data_Layanan.harga.ToString("n", CultureInfo.GetCultureInfo("id-ID"))}";
                 list.Add(data_kelas);
             }
             //Conn.Close();
@@ -211,13 +197,11 @@ namespace PBO_KelD08.JAPRI.Controller
         }
         public void switch_to_edit()
         {
-            //v_Register.ShowDialog();
             v_setting_profile_page = new V_Setting_Profile_page(this);
             v_setting_profile_page.ShowDialog();
         }
         public void switch_to_gantipassword()
         {
-            //v_Register.ShowDialog();
             v_ganti_password_page = new V_Ganti_Password_Page(this);
             v_ganti_password_page.ShowDialog();
         }

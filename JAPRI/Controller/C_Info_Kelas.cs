@@ -35,10 +35,7 @@ namespace PBO_KelD08.JAPRI.Controller
                     list.Add(peserta);
                 }
             }
-
             return list;
-
-
         }
 
         public void setkelas()
@@ -47,8 +44,6 @@ namespace PBO_KelD08.JAPRI.Controller
             DataTable data = m_peserta.Carikelas(id);
 
             string full = data.Rows[0]["nama_kelas"].ToString().Trim();
-
-            // Cari posisi spasi terakhir
             int lastSpaceIndex = full.LastIndexOf(' ');
 
             if (lastSpaceIndex > 0)
@@ -68,17 +63,6 @@ namespace PBO_KelD08.JAPRI.Controller
 
 
         }
-
-        //public void hapusmahasiswa()
-        //{
-        //    if (v_info_kelas.dataGridView1.CurrentRow != null)
-        //    {
-        //        var row = v_info_kelas.dataGridView1.CurrentRow;
-        //        int id = Convert.ToInt32(row.Cells["id"].Value);
-        //        m_peserta.Delete(id);
-        //    }
-        //}
-
         public void SwitchToProfile()
         {
             mainMenu.SwitchForm(v_info_kelas, mainMenu.ProfileController.GetView());

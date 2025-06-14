@@ -12,10 +12,27 @@ namespace PBO_KelD08.JAPRI.Controller
     {
         private C_Main_Menu mainMenu;
         public V_Ruang_Kelas_Page v_ruang_kelas;
+        M_Ruangan m_ruangan = new M_Ruangan();
         public C_Ruang_Kelas(C_Main_Menu mainMenu)
         {
             this.mainMenu = mainMenu;
             v_ruang_kelas = new V_Ruang_Kelas_Page(this);
+        }
+
+        public List<Data_Ruangan> ambilruangan()
+        {
+            var dataObjek = m_ruangan.GetRuangan();
+
+            List<Data_Ruangan> list = new List<Data_Ruangan>();
+            foreach (var item in dataObjek)
+            {
+                if (item is Data_Ruangan ruang)
+                {
+                    list.Add(ruang);
+                }
+            }
+
+            return list;
         }
 
         public void SwitchToProfile()

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBO_KelD08.JAPRI.Controller;
+using PBO_KelD08.JAPRI.Model;
 
 namespace PBO_KelD08.JAPRI.View
 {
@@ -48,7 +49,24 @@ namespace PBO_KelD08.JAPRI.View
 
         private void V_Ruang_Kelas_Page_Load(object sender, EventArgs e)
         {
+            List<Data_Ruangan> daftarruangan = Controller.ambilruangan();
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
 
+            dataGridView1.Columns.Add("no", "No");
+            dataGridView1.Columns.Add("nama_ruangan", "Nama Ruangan");
+
+            dataGridView1.Columns["no"].FillWeight = 30;
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            foreach (var ruang in daftarruangan)
+            {
+                dataGridView1.Rows.Add(
+                    ruang.no,
+                    ruang.nama_ruangan
+                );
+            }
         }
 
         private void logout_Click(object sender, EventArgs e)

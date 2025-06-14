@@ -34,8 +34,8 @@ namespace PBO_KelD08.JAPRI.View
             }
             kelaspraktikum.DataSource = null;
             kelaspraktikum.DataSource = kelasList;
-            kelaspraktikum.DisplayMember = "nama_kelas";  // properti yang ditampilkan
-            kelaspraktikum.ValueMember = "id_kelas";      // properti yang digunakan sebagai nilai
+            kelaspraktikum.DisplayMember = "nama_kelas";  
+            kelaspraktikum.ValueMember = "id_kelas";     
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -68,16 +68,5 @@ namespace PBO_KelD08.JAPRI.Model
                 }
             }
         }
-
-        //public DataTable Execute_With_Return(NpgsqlCommand Querry)
-        //{
-        //    using (conn = new NpgsqlConnection(db))
-        //    {
-        //        Querry.Connection = conn;
-        //        DataTable Data = new DataTable();
-        //        Data.Load(Querry.ExecuteReader());
-        //        return Data;
-        //    }
-        //}
     }
 }

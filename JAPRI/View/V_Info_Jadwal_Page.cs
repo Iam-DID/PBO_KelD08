@@ -54,7 +54,6 @@ namespace PBO_KelD08.JAPRI.View
         private void V_Info_Jadwal_Page_Load(object sender, EventArgs e)
         {
             List<Data_Jadwal> daftarjadwal = Controller.ambiljadwal();
-            //MessageBox.Show($"Jumlah jadwal: {daftarjadwal.Count}");
             Controller.setSemester();
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.Columns.Clear();
