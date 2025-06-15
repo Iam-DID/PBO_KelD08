@@ -213,6 +213,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Profil_Ketua_Kelas_Page";
             Text = "V_Profil_Ketua_Kelas_Page";
+            Load += V_Profil_Ketua_Kelas_Page_Load;
             ResumeLayout(false);
             PerformLayout();
         }

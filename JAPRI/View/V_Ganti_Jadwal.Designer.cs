@@ -43,6 +43,7 @@
             button1 = new Button();
             jamselesai = new ComboBox();
             dataGridView1 = new DataGridView();
+            topingbag = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -71,11 +72,12 @@
             // ubah
             // 
             ubah.BackColor = Color.Transparent;
+            ubah.BackgroundImage = (Image)resources.GetObject("ubah.BackgroundImage");
             ubah.FlatAppearance.BorderSize = 0;
             ubah.FlatStyle = FlatStyle.Flat;
-            ubah.Location = new Point(638, 446);
+            ubah.Location = new Point(744, 455);
             ubah.Name = "ubah";
-            ubah.Size = new Size(96, 35);
+            ubah.Size = new Size(148, 40);
             ubah.TabIndex = 2;
             ubah.UseVisualStyleBackColor = false;
             ubah.Click += ubah_Click;
@@ -154,24 +156,26 @@
             // ruangan
             // 
             ruangan.FormattingEnabled = true;
-            ruangan.Location = new Point(287, 157);
+            ruangan.Location = new Point(272, 94);
             ruangan.Name = "ruangan";
             ruangan.Size = new Size(121, 23);
             ruangan.TabIndex = 24;
+            ruangan.Text = "--Pilih Kelas--";
             ruangan.SelectedIndexChanged += ruangan_SelectedIndexChanged;
             // 
             // jammulai
             // 
             jammulai.FormattingEnabled = true;
-            jammulai.Location = new Point(575, 157);
+            jammulai.Location = new Point(619, 94);
             jammulai.Name = "jammulai";
             jammulai.Size = new Size(121, 23);
             jammulai.TabIndex = 25;
+            jammulai.Text = "--Pilih Jam Awal--";
             jammulai.SelectedIndexChanged += jammulai_SelectedIndexChanged;
             // 
             // button1
             // 
-            button1.Location = new Point(287, 221);
+            button1.Location = new Point(399, 94);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 26;
@@ -182,21 +186,36 @@
             // jamselesai
             // 
             jamselesai.FormattingEnabled = true;
-            jamselesai.Location = new Point(575, 238);
+            jamselesai.Location = new Point(771, 94);
             jamselesai.Name = "jamselesai";
             jamselesai.Size = new Size(121, 23);
             jamselesai.TabIndex = 27;
+            jamselesai.Text = "--Jam Berakhir--";
             jamselesai.SelectedIndexChanged += jamselesai_SelectedIndexChanged;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.WhiteSmoke;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(278, 300);
+            dataGridView1.Location = new Point(272, 142);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(620, 131);
+            dataGridView1.Size = new Size(620, 289);
             dataGridView1.TabIndex = 28;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // topingbag
+            // 
+            topingbag.AutoSize = true;
+            topingbag.BackColor = Color.Transparent;
+            topingbag.FlatStyle = FlatStyle.Flat;
+            topingbag.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            topingbag.Location = new Point(749, 92);
+            topingbag.Name = "topingbag";
+            topingbag.Size = new Size(16, 21);
+            topingbag.TabIndex = 29;
+            topingbag.Text = "-";
+            topingbag.Click += label1_Click;
             // 
             // V_Ganti_Jadwal
             // 
@@ -204,6 +223,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(topingbag);
             Controls.Add(dataGridView1);
             Controls.Add(jamselesai);
             Controls.Add(button1);
@@ -224,6 +244,7 @@
             Load += V_Ganti_Jadwal_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -241,5 +262,6 @@
         private Button button1;
         public ComboBox jamselesai;
         private DataGridView dataGridView1;
+        private Label topingbag;
     }
 }
