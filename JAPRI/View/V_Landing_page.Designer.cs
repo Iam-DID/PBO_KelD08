@@ -73,6 +73,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Landing_Page";
             Text = "Landing_Page";
+            Load += V_Landing_Page_Load;
             ResumeLayout(false);
         }
 

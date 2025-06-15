@@ -159,5 +159,15 @@ namespace PBO_KelD08.JAPRI.View
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void foto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

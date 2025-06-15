@@ -39,5 +39,10 @@ namespace PBO_KelD08.JAPRI.View
         {
             Controller.switch_to_login(this);
         }
+
+        private void V_Landing_Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
