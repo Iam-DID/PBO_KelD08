@@ -192,7 +192,6 @@ namespace PBO_KelD08.JAPRI.Controller
                 };
                 list.Add(data_kelas);
             }
-            //Conn.Close();
             return list;
         }
         public void switch_to_edit()

@@ -42,6 +42,8 @@
             jammulai = new ComboBox();
             button1 = new Button();
             jamselesai = new ComboBox();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -76,6 +78,7 @@
             ubah.Size = new Size(96, 35);
             ubah.TabIndex = 2;
             ubah.UseVisualStyleBackColor = false;
+            ubah.Click += ubah_Click;
             // 
             // logout
             // 
@@ -185,12 +188,22 @@
             jamselesai.TabIndex = 27;
             jamselesai.SelectedIndexChanged += jamselesai_SelectedIndexChanged;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(278, 300);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(620, 131);
+            dataGridView1.TabIndex = 28;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
             // V_Ganti_Jadwal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(dataGridView1);
             Controls.Add(jamselesai);
             Controls.Add(button1);
             Controls.Add(jammulai);
@@ -208,6 +221,7 @@
             Name = "V_Ganti_Jadwal";
             Text = "Ganti_Jadwal";
             Load += V_Ganti_Jadwal_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -225,5 +239,6 @@
         public ComboBox jammulai;
         private Button button1;
         public ComboBox jamselesai;
+        private DataGridView dataGridView1;
     }
 }

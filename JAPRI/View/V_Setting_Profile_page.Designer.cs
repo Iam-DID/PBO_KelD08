@@ -43,9 +43,9 @@
             nama.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nama.Location = new Point(81, 128);
             nama.Name = "nama";
-            nama.Size = new Size(201, 21);
+            nama.Size = new Size(16, 21);
             nama.TabIndex = 0;
-            nama.Text = "Muhamad Rohmad Hidayat";
+            nama.Text = "-";
             nama.Click += label1_Click;
             // 
             // prodi
@@ -55,9 +55,9 @@
             prodi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             prodi.Location = new Point(81, 197);
             prodi.Name = "prodi";
-            prodi.Size = new Size(90, 21);
+            prodi.Size = new Size(16, 21);
             prodi.TabIndex = 1;
-            prodi.Text = "informatika";
+            prodi.Text = "-";
             // 
             // nim
             // 
@@ -66,9 +66,9 @@
             nim.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             nim.Location = new Point(81, 265);
             nim.Name = "nim";
-            nim.Size = new Size(118, 21);
+            nim.Size = new Size(16, 21);
             nim.TabIndex = 2;
-            nim.Text = "242410103016";
+            nim.Text = "-";
             // 
             // kelaspraktikum
             // 

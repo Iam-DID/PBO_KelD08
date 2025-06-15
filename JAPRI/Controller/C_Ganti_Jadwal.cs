@@ -45,6 +45,20 @@ namespace PBO_KelD08.JAPRI.Controller
             return v_ganti_jadwal;
 
         }
+        public List<Data_PilihanJadwal> listjadwal()
+        {
+            int id_kelas = mainMenu.ProfileController.getidkelas();
+            List<Data_PilihanJadwal> list = m_pilihanjadwal.ambiljadwal(id_kelas);
+
+            return list;
+
+
+        }
+
+        public void deletejadwal(int id)
+        {
+            m_pilihanjadwal.Delete(id);
+        }
 
         bool IsBentrok(DateTime tanggal, TimeSpan mulai, TimeSpan selesai, int  id_ruangan)
         {
@@ -76,6 +90,51 @@ namespace PBO_KelD08.JAPRI.Controller
             }
 
             return false;
+        }
+        public void simpanjadwal()
+        {
+            // Validasi input kosong
+            if (v_ganti_jadwal.ruangan.SelectedValue == null ||
+                v_ganti_jadwal.jammulai.SelectedItem == null ||
+                v_ganti_jadwal.jamselesai.SelectedItem == null)
+            {
+                MessageBox.Show("Harap lengkapi semua input terlebih dahulu.", "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Ambil nilai input
+            int id_kelas = mainMenu.ProfileController.getidkelas();
+            int id_ruangan = Convert.ToInt32(v_ganti_jadwal.ruangan.SelectedValue);
+            DateTime tanggal = v_ganti_jadwal.dateTimePicker1.Value.Date;
+
+            // Coba konversi jam dengan aman
+            if (!TimeSpan.TryParse(v_ganti_jadwal.jammulai.SelectedItem.ToString(), out TimeSpan jammulai) ||
+                !TimeSpan.TryParse(v_ganti_jadwal.jamselesai.SelectedItem.ToString(), out TimeSpan jamselesai))
+            {
+                MessageBox.Show("Format jam tidak valid.", "Format Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Buat objek jadwal
+            Data_PilihanJadwal jadwalbaru = new Data_PilihanJadwal
+            {
+                id_kelas = id_kelas,
+                id_ruangan = id_ruangan,
+                tanggal = tanggal,
+                jam_mulai = jammulai,
+                jam_selesai = jamselesai
+            };
+
+            // Cek apakah jadwal sudah pernah dipilih dalam minggu ini
+            if (m_pilihanjadwal.cekexist(jadwalbaru))
+            {
+                m_pilihanjadwal.Insert(jadwalbaru);
+                MessageBox.Show("Jadwal berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Kelas untuk minggu ini sudah memiliki jadwal.", "Gagal Menyimpan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void setpilihan()
         {

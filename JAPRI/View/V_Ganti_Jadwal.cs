@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBO_KelD08.JAPRI.Controller;
 using PBO_KelD08.JAPRI.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBO_KelD08.JAPRI.View
 {
@@ -57,8 +58,40 @@ namespace PBO_KelD08.JAPRI.View
             //Data_Akun akun = Controller.GetData();
             ruangan.DataSource = null;
             ruangan.DataSource = ruanganList;
-            ruangan.DisplayMember = "nama_ruangan"; 
-            ruangan.ValueMember = "id_ruangan";     
+            ruangan.DisplayMember = "nama_ruangan";
+            ruangan.ValueMember = "id_ruangan";
+
+
+            List<Data_PilihanJadwal> list = Controller.listjadwal();
+
+            var data = list.Select((d, i) => new
+            {
+                ID = d.id_pilihan,
+                No = i + 1,
+                Tanggal = d.tanggal.ToString("yyyy-MM-dd"),
+                JamMulai = d.jam_mulai.ToString(@"hh\:mm"),
+                JamSelesai = d.jam_selesai.ToString(@"hh\:mm"),
+                Ruangan = d.nama_ruangan
+            }).ToList();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = data;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dataGridView1.Columns["ID"].Visible = false;
+
+            if (!dataGridView1.Columns.Contains("Hapus"))
+            {
+                DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                deleteButton.Name = "Hapus";
+                deleteButton.HeaderText = "Hapus";
+                deleteButton.Text = "Delete";
+                deleteButton.UseColumnTextForButtonValue = true;
+                //dataGridView1.Columns.Add(deleteButton);
+
+                dataGridView1.Columns.Add(deleteButton); // atur index sesuai kolommu
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -75,8 +108,12 @@ namespace PBO_KelD08.JAPRI.View
         {
             if (jammulai.SelectedItem != null)
             {
+                jamselesai.Items.Clear();
+                jamselesai.SelectedIndex = -1;
+                jamselesai.Text = "";
                 string jamMulaiDipilih = jammulai.SelectedItem.ToString();
-                jamselesai.Text = Controller.HitungJamSelesai(jamMulaiDipilih);
+                //jamselesai.Text = Controller.HitungJamSelesai(jamMulaiDipilih);
+                jamselesai.Items.Add((Controller.HitungJamSelesai(jamMulaiDipilih)).ToString());
             }
         }
 
@@ -84,6 +121,73 @@ namespace PBO_KelD08.JAPRI.View
         {
 
         }
+
+        private void ubah_Click(object sender, EventArgs e)
+        {
+            Controller.simpanjadwal();
+            refreshform();
+        }
+
+        private void refreshform()
+        {
+            // Ambil ulang list data dari controller
+            List<Data_PilihanJadwal> list = Controller.listjadwal();
+
+            // Siapkan data binding dengan kolom tambahan (No)
+            var data = list.Select((d, i) => new
+            {
+                ID = d.id_pilihan,
+                No = i + 1,
+                Tanggal = d.tanggal.ToString("yyyy-MM-dd"),
+                JamMulai = d.jam_mulai.ToString(@"hh\:mm"),
+                JamSelesai = d.jam_selesai.ToString(@"hh\:mm"),
+                Ruangan = d.nama_ruangan
+            }).ToList();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = data;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["ID"].Visible = false;
+
+            // Tambah tombol Delete hanya jika belum ada
+            // Hapus kolom Hapus jika sudah ada
+            if (dataGridView1.Columns.Contains("Hapus"))
+            {
+                dataGridView1.Columns.Remove("Hapus");
+            }
+
+            // Tambahkan kembali kolom Hapus di posisi terakhir
+            DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+            deleteButton.Name = "Hapus";
+            deleteButton.HeaderText = "Hapus";
+            deleteButton.Text = "Delete";
+            deleteButton.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(deleteButton); // selalu di paling kanan
+
+            // Kosongkan pilihan jadwal (opsional reset form)
+            jammulai.SelectedIndex = -1;
+            jamselesai.Items.Clear();
+            jamselesai.Text = "";
+            jamselesai.SelectedIndex = -1;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "Hapus")
+            {
+                int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID"].Value);
+
+                DialogResult confirm = MessageBox.Show("Yakin ingin menghapus jadwal ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (confirm == DialogResult.Yes)
+                {
+                    Controller.deletejadwal(id);
+                    MessageBox.Show("Jadwal berhasil dihapus!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    refreshform();
+                }
+            }
+        }
     }
+
 }
 
