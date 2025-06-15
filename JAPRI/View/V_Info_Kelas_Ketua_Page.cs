@@ -91,6 +91,21 @@ namespace PBO_KelD08.JAPRI.View
         {
             Controller.updatenote(pesanaksprak.Text);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void V_Info_Kelas_Ketua_Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

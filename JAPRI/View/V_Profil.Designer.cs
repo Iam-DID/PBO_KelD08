@@ -267,7 +267,7 @@
             updatephoto.Image = (Image)resources.GetObject("updatephoto.Image");
             updatephoto.Location = new Point(370, 273);
             updatephoto.Name = "updatephoto";
-            updatephoto.Size = new Size(43, 42);
+            updatephoto.Size = new Size(28, 28);
             updatephoto.TabIndex = 23;
             updatephoto.UseVisualStyleBackColor = false;
             updatephoto.Click += updatephoto_Click;

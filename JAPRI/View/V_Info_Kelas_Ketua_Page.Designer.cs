@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Info_Kelas_Ketua_Page));
             matakuliah = new Label();
             ruang = new Label();
-            gedung = new Label();
             jammulai = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -40,7 +39,6 @@
             jamakhirpengganti = new Label();
             label6 = new Label();
             jammulaipengganti = new Label();
-            gedungpengganti = new Label();
             ruangpengganti = new Label();
             pesanaksprak = new TextBox();
             button1 = new Button();
@@ -59,56 +57,44 @@
             matakuliah.ForeColor = Color.Gray;
             matakuliah.Location = new Point(247, 30);
             matakuliah.Name = "matakuliah";
-            matakuliah.Size = new Size(21, 30);
+            matakuliah.Size = new Size(309, 30);
             matakuliah.TabIndex = 0;
-            matakuliah.Text = "-";
+            matakuliah.Text = "Algoritma dan Pemograman 2";
             // 
             // ruang
             // 
             ruang.AutoSize = true;
             ruang.BackColor = Color.Transparent;
-            ruang.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ruang.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ruang.ForeColor = Color.Gray;
-            ruang.Location = new Point(294, 115);
+            ruang.Location = new Point(302, 121);
             ruang.Name = "ruang";
-            ruang.Size = new Size(11, 13);
+            ruang.Size = new Size(95, 21);
             ruang.TabIndex = 1;
-            ruang.Text = "-";
+            ruang.Text = "Ruang B2.1";
             ruang.Click += label1_Click;
-            // 
-            // gedung
-            // 
-            gedung.AutoSize = true;
-            gedung.BackColor = Color.Transparent;
-            gedung.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gedung.ForeColor = Color.Gray;
-            gedung.Location = new Point(294, 147);
-            gedung.Name = "gedung";
-            gedung.Size = new Size(11, 13);
-            gedung.TabIndex = 2;
-            gedung.Text = "-";
             // 
             // jammulai
             // 
             jammulai.AutoSize = true;
             jammulai.BackColor = Color.Transparent;
-            jammulai.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            jammulai.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
             jammulai.ForeColor = Color.Gray;
-            jammulai.Location = new Point(294, 174);
+            jammulai.Location = new Point(302, 167);
             jammulai.Name = "jammulai";
-            jammulai.Size = new Size(11, 13);
+            jammulai.Size = new Size(39, 13);
             jammulai.TabIndex = 3;
-            jammulai.Text = "-";
+            jammulai.Text = "10.00";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
             label1.ForeColor = Color.Gray;
-            label1.Location = new Point(327, 169);
+            label1.Location = new Point(340, 167);
             label1.Name = "label1";
-            label1.Size = new Size(15, 20);
+            label1.Size = new Size(11, 13);
             label1.TabIndex = 4;
             label1.Text = "-";
             // 
@@ -116,23 +102,24 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
             label2.ForeColor = Color.Gray;
-            label2.Location = new Point(340, 173);
+            label2.Location = new Point(351, 167);
             label2.Name = "label2";
-            label2.Size = new Size(11, 13);
+            label2.Size = new Size(39, 13);
             label2.TabIndex = 5;
-            label2.Text = "-";
+            label2.Text = "11.40";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold);
             label3.ForeColor = Color.Gray;
-            label3.Location = new Point(372, 173);
+            label3.Location = new Point(389, 167);
             label3.Name = "label3";
-            label3.Size = new Size(28, 13);
+            label3.Size = new Size(31, 13);
             label3.TabIndex = 6;
             label3.Text = "WIB";
             // 
@@ -142,7 +129,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             label4.ForeColor = Color.Gray;
-            label4.Location = new Point(742, 135);
+            label4.Location = new Point(747, 132);
             label4.Name = "label4";
             label4.Size = new Size(35, 16);
             label4.TabIndex = 12;
@@ -154,11 +141,11 @@
             jamakhirpengganti.BackColor = Color.Transparent;
             jamakhirpengganti.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             jamakhirpengganti.ForeColor = Color.Gray;
-            jamakhirpengganti.Location = new Point(700, 135);
+            jamakhirpengganti.Location = new Point(705, 132);
             jamakhirpengganti.Name = "jamakhirpengganti";
-            jamakhirpengganti.Size = new Size(12, 16);
+            jamakhirpengganti.Size = new Size(43, 16);
             jamakhirpengganti.TabIndex = 11;
-            jamakhirpengganti.Text = "-";
+            jamakhirpengganti.Text = "11.40";
             // 
             // label6
             // 
@@ -166,12 +153,13 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             label6.ForeColor = Color.Gray;
-            label6.Location = new Point(688, 135);
+            label6.Location = new Point(693, 132);
             label6.Name = "label6";
             label6.Size = new Size(12, 16);
             label6.TabIndex = 10;
             label6.Text = "-";
             label6.Click += label6_Click;
+
             // 
             // jammulaipengganti
             // 
@@ -179,35 +167,23 @@
             jammulaipengganti.BackColor = Color.Transparent;
             jammulaipengganti.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold);
             jammulaipengganti.ForeColor = Color.Gray;
-            jammulaipengganti.Location = new Point(646, 135);
+            jammulaipengganti.Location = new Point(651, 132);
             jammulaipengganti.Name = "jammulaipengganti";
-            jammulaipengganti.Size = new Size(12, 16);
+            jammulaipengganti.Size = new Size(43, 16);
             jammulaipengganti.TabIndex = 9;
-            jammulaipengganti.Text = "-";
-            // 
-            // gedungpengganti
-            // 
-            gedungpengganti.AutoSize = true;
-            gedungpengganti.BackColor = Color.Transparent;
-            gedungpengganti.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            gedungpengganti.ForeColor = Color.Gray;
-            gedungpengganti.Location = new Point(644, 96);
-            gedungpengganti.Name = "gedungpengganti";
-            gedungpengganti.Size = new Size(13, 17);
-            gedungpengganti.TabIndex = 8;
-            gedungpengganti.Text = "-";
+            jammulaipengganti.Text = "10.00";
             // 
             // ruangpengganti
             // 
             ruangpengganti.AutoSize = true;
             ruangpengganti.BackColor = Color.Transparent;
-            ruangpengganti.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ruangpengganti.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ruangpengganti.ForeColor = Color.Gray;
-            ruangpengganti.Location = new Point(644, 59);
+            ruangpengganti.Location = new Point(651, 79);
             ruangpengganti.Name = "ruangpengganti";
-            ruangpengganti.Size = new Size(13, 17);
+            ruangpengganti.Size = new Size(95, 21);
             ruangpengganti.TabIndex = 7;
-            ruangpengganti.Text = "-";
+            ruangpengganti.Text = "Ruang B2.1";
             // 
             // pesanaksprak
             // 
@@ -232,6 +208,7 @@
             button1.TabIndex = 14;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+
             // 
             // button4
             // 
@@ -293,13 +270,11 @@
             Controls.Add(jamakhirpengganti);
             Controls.Add(label6);
             Controls.Add(jammulaipengganti);
-            Controls.Add(gedungpengganti);
             Controls.Add(ruangpengganti);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(jammulai);
-            Controls.Add(gedung);
             Controls.Add(ruang);
             Controls.Add(matakuliah);
             FormBorderStyle = FormBorderStyle.None;
@@ -315,7 +290,6 @@
 
         private Label matakuliah;
         private Label ruang;
-        private Label gedung;
         private Label jammulai;
         private Label label1;
         private Label label2;
@@ -324,7 +298,6 @@
         private Label jamakhirpengganti;
         private Label label6;
         private Label jammulaipengganti;
-        private Label gedungpengganti;
         private Label ruangpengganti;
         private TextBox pesanaksprak;
         private Button button1;

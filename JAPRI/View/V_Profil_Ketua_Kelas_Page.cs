@@ -121,5 +121,10 @@ namespace PBO_KelD08.JAPRI.View
             Controller.upload_photo();
             RefreshForm();
         }
+
+        private void V_Profil_Ketua_Kelas_Page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

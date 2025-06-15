@@ -187,6 +187,11 @@ namespace PBO_KelD08.JAPRI.View
                 }
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
