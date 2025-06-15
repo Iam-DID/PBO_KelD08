@@ -47,6 +47,8 @@
             button4 = new Button();
             info_kelas_ketua = new Button();
             button2 = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // matakuliah
@@ -57,9 +59,9 @@
             matakuliah.ForeColor = Color.Gray;
             matakuliah.Location = new Point(247, 30);
             matakuliah.Name = "matakuliah";
-            matakuliah.Size = new Size(309, 30);
+            matakuliah.Size = new Size(21, 30);
             matakuliah.TabIndex = 0;
-            matakuliah.Text = "Algoritma dan Pemograman 2";
+            matakuliah.Text = "-";
             // 
             // ruang
             // 
@@ -69,9 +71,9 @@
             ruang.ForeColor = Color.Gray;
             ruang.Location = new Point(294, 115);
             ruang.Name = "ruang";
-            ruang.Size = new Size(66, 13);
+            ruang.Size = new Size(11, 13);
             ruang.TabIndex = 1;
-            ruang.Text = "Ruang B2.1";
+            ruang.Text = "-";
             ruang.Click += label1_Click;
             // 
             // gedung
@@ -82,9 +84,9 @@
             gedung.ForeColor = Color.Gray;
             gedung.Location = new Point(294, 147);
             gedung.Name = "gedung";
-            gedung.Size = new Size(169, 13);
+            gedung.Size = new Size(11, 13);
             gedung.TabIndex = 2;
-            gedung.Text = "Gedung 24B UPT Perpustakaan";
+            gedung.Text = "-";
             // 
             // jammulai
             // 
@@ -94,9 +96,9 @@
             jammulai.ForeColor = Color.Gray;
             jammulai.Location = new Point(294, 174);
             jammulai.Name = "jammulai";
-            jammulai.Size = new Size(34, 13);
+            jammulai.Size = new Size(11, 13);
             jammulai.TabIndex = 3;
-            jammulai.Text = "10.00";
+            jammulai.Text = "-";
             // 
             // label1
             // 
@@ -118,9 +120,9 @@
             label2.ForeColor = Color.Gray;
             label2.Location = new Point(340, 173);
             label2.Name = "label2";
-            label2.Size = new Size(34, 13);
+            label2.Size = new Size(11, 13);
             label2.TabIndex = 5;
-            label2.Text = "11.40";
+            label2.Text = "-";
             // 
             // label3
             // 
@@ -154,9 +156,9 @@
             jamakhirpengganti.ForeColor = Color.Gray;
             jamakhirpengganti.Location = new Point(700, 135);
             jamakhirpengganti.Name = "jamakhirpengganti";
-            jamakhirpengganti.Size = new Size(43, 16);
+            jamakhirpengganti.Size = new Size(12, 16);
             jamakhirpengganti.TabIndex = 11;
-            jamakhirpengganti.Text = "11.40";
+            jamakhirpengganti.Text = "-";
             // 
             // label6
             // 
@@ -169,6 +171,7 @@
             label6.Size = new Size(12, 16);
             label6.TabIndex = 10;
             label6.Text = "-";
+            label6.Click += label6_Click;
             // 
             // jammulaipengganti
             // 
@@ -178,9 +181,9 @@
             jammulaipengganti.ForeColor = Color.Gray;
             jammulaipengganti.Location = new Point(646, 135);
             jammulaipengganti.Name = "jammulaipengganti";
-            jammulaipengganti.Size = new Size(43, 16);
+            jammulaipengganti.Size = new Size(12, 16);
             jammulaipengganti.TabIndex = 9;
-            jammulaipengganti.Text = "10.00";
+            jammulaipengganti.Text = "-";
             // 
             // gedungpengganti
             // 
@@ -190,9 +193,9 @@
             gedungpengganti.ForeColor = Color.Gray;
             gedungpengganti.Location = new Point(644, 96);
             gedungpengganti.Name = "gedungpengganti";
-            gedungpengganti.Size = new Size(198, 17);
+            gedungpengganti.Size = new Size(13, 17);
             gedungpengganti.TabIndex = 8;
-            gedungpengganti.Text = "Gedung 24B UPT Perpustakaan";
+            gedungpengganti.Text = "-";
             // 
             // ruangpengganti
             // 
@@ -202,9 +205,9 @@
             ruangpengganti.ForeColor = Color.Gray;
             ruangpengganti.Location = new Point(644, 59);
             ruangpengganti.Name = "ruangpengganti";
-            ruangpengganti.Size = new Size(77, 17);
+            ruangpengganti.Size = new Size(13, 17);
             ruangpengganti.TabIndex = 7;
-            ruangpengganti.Text = "Ruang B2.1";
+            ruangpengganti.Text = "-";
             // 
             // pesanaksprak
             // 
@@ -228,6 +231,7 @@
             button1.Size = new Size(53, 24);
             button1.TabIndex = 14;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button4
             // 
@@ -239,6 +243,7 @@
             button4.Size = new Size(79, 23);
             button4.TabIndex = 17;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // info_kelas_ketua
             // 
@@ -261,6 +266,15 @@
             button2.Size = new Size(64, 26);
             button2.TabIndex = 15;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(269, 284);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(628, 208);
+            dataGridView1.TabIndex = 18;
             // 
             // V_Info_Kelas_Ketua_Page
             // 
@@ -269,6 +283,7 @@
             BackColor = Color.Gray;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(dataGridView1);
             Controls.Add(button4);
             Controls.Add(info_kelas_ketua);
             Controls.Add(button2);
@@ -291,6 +306,7 @@
             Name = "V_Info_Kelas_Ketua_Page";
             Text = "V_Info_Kelas_Ketua_Page";
             Load += V_Info_Kelas_Ketua_Page_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -315,5 +331,6 @@
         private Button button4;
         private Button info_kelas_ketua;
         private Button button2;
+        private DataGridView dataGridView1;
     }
 }

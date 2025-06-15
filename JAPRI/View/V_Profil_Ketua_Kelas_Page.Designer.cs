@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Profil_Ketua_Kelas_Page));
             button1 = new Button();
             info_kelas_ketua = new Button();
             button4 = new Button();
@@ -40,8 +41,8 @@
             setingprofil = new Button();
             label2 = new Label();
             nama = new Label();
-            updatephoto = new Button();
             foto = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)foto).BeginInit();
             SuspendLayout();
             // 
@@ -200,23 +201,6 @@
             nama.TabIndex = 22;
             nama.Text = "Nama";
             // 
-            // updatephoto
-            // 
-            updatephoto.BackColor = Color.Transparent;
-            updatephoto.BackgroundImageLayout = ImageLayout.Zoom;
-            updatephoto.FlatAppearance.BorderSize = 0;
-            updatephoto.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            updatephoto.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            updatephoto.FlatStyle = FlatStyle.Flat;
-            updatephoto.Font = new Font("Segoe UI", 12F);
-            updatephoto.Location = new Point(380, 280);
-            updatephoto.Name = "updatephoto";
-            updatephoto.Size = new Size(23, 31);
-            updatephoto.TabIndex = 32;
-            updatephoto.Text = "+";
-            updatephoto.UseVisualStyleBackColor = false;
-            updatephoto.Click += updatephoto_Click;
-            // 
             // foto
             // 
             foto.BackColor = Color.Transparent;
@@ -229,13 +213,30 @@
             foto.TabIndex = 31;
             foto.TabStop = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F);
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(370, 273);
+            button2.Name = "button2";
+            button2.Size = new Size(43, 42);
+            button2.TabIndex = 33;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // V_Profil_Ketua_Kelas_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Profil_ketua;
             ClientSize = new Size(960, 540);
-            Controls.Add(updatephoto);
+            Controls.Add(button2);
             Controls.Add(foto);
             Controls.Add(password);
             Controls.Add(kelaspraktikum);
@@ -272,7 +273,7 @@
         private Button setingprofil;
         private Label label2;
         private Label nama;
-        private Button updatephoto;
         public PictureBox foto;
+        private Button button2;
     }
 }

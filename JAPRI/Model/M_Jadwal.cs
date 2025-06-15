@@ -40,6 +40,26 @@ namespace PBO_KelD08.JAPRI.Model
             }
             return list;
         }
+        public Data_Jadwal GetInfoKelasUser(int id)
+        {
+            DataTable data = Execute_With_Return($"SELECT jk.id_jadwal,k.nama_kelas, jk.hari, jk.jam_mulai, jk.jam_selesai, r.nama_ruangan  " +
+               $"From jadwal_kelas jk " +
+               $"join kelas k on (jk.id_jadwal=k.id_jadwal) " +
+               $"join ruangan r on (jk.id_ruangan = r.id_ruangan) " +
+               $"where jk.id_ruangan = {id} ");
+            Data_Jadwal data_jadwal = new Data_Jadwal
+            {
+                id_jadwal = (int)data.Rows[0]["id_jadwal"],
+                nama_kelas = data.Rows[0]["nama_kelas"].ToString(),
+                hari = data.Rows[0]["hari"].ToString(),
+                jam_mulai = (TimeSpan)data.Rows[0]["jam_mulai"],
+                jam_selesai = (TimeSpan)data.Rows[0]["jam_selesai"],
+                nama_ruangan = data.Rows[0]["nama_ruangan"].ToString(),
+            };
+
+            return data_jadwal;
+        }
+
         public List<object> Get()
         {
             return new List<object>();
@@ -58,6 +78,7 @@ namespace PBO_KelD08.JAPRI.Model
         {
 
         }
+ 
         public DataTable CariSemester(int id_kelas)
         {
             DataTable data = Execute_With_Return("SELECT mk.semester " +

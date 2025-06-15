@@ -80,6 +80,61 @@ namespace PBO_KelD08.JAPRI.Model
             else { return true; }
         }
 
+        public Data_PilihanJadwal getjadwalpengganti(int id_kelas)
+        {
+            DateTime tanggal = DateTime.Now;
+            int offsetHari = (int)tanggal.DayOfWeek - (int)DayOfWeek.Monday;
+            if (offsetHari < 0) offsetHari += 7;
+
+            DateTime tanggalawal = tanggal.AddDays(-offsetHari);
+
+            string awalMinggu = tanggalawal.ToString("yyyy-MM-dd");// Senin
+            string akhirMinggu = tanggalawal.AddDays(6).ToString("yyyy-MM-dd");     // Minggu
+
+            DataTable data = Execute_With_Return($"SELECT pjk.tanggal, pjk.jam_mulai, pjk.jam_selesai, pjk.id_ruangan, r.nama_ruangan " +
+                $"FROM pilihan_jadwal_asisten pjk " +
+                $"join ruangan r on (pjk.id_ruangan=r.id_ruangan) " +
+                $"where pjk.tanggal between '{awalMinggu}' and '{akhirMinggu}' and pjk.id_kelas= {id_kelas}");
+
+            Data_PilihanJadwal data_pilihanjadwal = new Data_PilihanJadwal
+            {
+                tanggal = Convert.ToDateTime(data.Rows[0]["tanggal"]),
+                jam_mulai = (TimeSpan)data.Rows[0]["jam_mulai"],
+                jam_selesai = (TimeSpan)data.Rows[0]["jam_selesai"],
+                id_ruangan = (int)data.Rows[0]["id_ruangan"],
+                nama_ruangan = data.Rows[0]["nama_ruangan"].ToString(),
+            };
+            return data_pilihanjadwal;
+        }
+        public int getidjadwalpengganti(int id_kelas)
+        {
+            DateTime tanggal = DateTime.Now;
+            int offsetHari = (int)tanggal.DayOfWeek - (int)DayOfWeek.Monday;
+            if (offsetHari < 0) offsetHari += 7;
+
+            DateTime tanggalawal = tanggal.AddDays(-offsetHari);
+
+            string awalMinggu = tanggalawal.ToString("yyyy-MM-dd");// Senin
+            string akhirMinggu = tanggalawal.AddDays(6).ToString("yyyy-MM-dd");     // Minggu
+
+            DataTable data = Execute_With_Return($"SELECT pjk.id_pilihan, pjk.tanggal, pjk.jam_mulai, pjk.jam_selesai, pjk.id_ruangan, r.nama_ruangan " +
+                $"FROM pilihan_jadwal_asisten pjk " +
+                $"join ruangan r on (pjk.id_ruangan=r.id_ruangan) " +
+                $"where pjk.tanggal between '{awalMinggu}' and '{akhirMinggu}' and pjk.id_kelas= {id_kelas}");
+
+            Data_PilihanJadwal data_pilihanjadwal = new Data_PilihanJadwal
+            {
+                id_pilihan = (int)data.Rows[0]["id_pilihan"],
+                tanggal = Convert.ToDateTime(data.Rows[0]["tanggal"]),
+                jam_mulai = (TimeSpan)data.Rows[0]["jam_mulai"],
+                jam_selesai = (TimeSpan)data.Rows[0]["jam_selesai"],
+                id_ruangan = (int)data.Rows[0]["id_ruangan"],
+                nama_ruangan = data.Rows[0]["nama_ruangan"].ToString(),
+            };
+            return data_pilihanjadwal.id_pilihan;
+        }
+
+
         public List<Data_PilihanJadwal> ambiljadwal(int id)
         {
             DataTable jadwal = Execute_With_Return($"Select pjk.id_pilihan, pjk.tanggal,pjk.jam_mulai,pjk.jam_selesai,r.nama_ruangan from pilihan_jadwal_asisten pjk " +
@@ -102,6 +157,10 @@ namespace PBO_KelD08.JAPRI.Model
                 list.Add(data_jadwal);
             }
             return list;
+        }
+        public void updatenotes(string note,int id)
+        {
+            Execute_No_Return($"Update pilihan_jadwal_asisten set note = '{note}' where id_pilihan = {id}");
         }
         public void Delete(int ID)
         {

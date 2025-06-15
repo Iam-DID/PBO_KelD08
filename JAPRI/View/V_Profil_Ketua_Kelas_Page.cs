@@ -88,8 +88,7 @@ namespace PBO_KelD08.JAPRI.View
 
         private void updatephoto_Click(object sender, EventArgs e)
         {
-            Controller.upload_photo();
-            RefreshForm();
+
         }
 
         private void gantipassword_Click(object sender, EventArgs e)
@@ -115,6 +114,12 @@ namespace PBO_KelD08.JAPRI.View
             {
                 Controller.SwitchToInfoKelasKetua();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Controller.upload_photo();
+            RefreshForm();
         }
     }
 }
