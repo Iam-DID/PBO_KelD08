@@ -54,6 +54,10 @@ namespace PBO_KelD08.JAPRI.Controller
 
 
         }
+        public void shownote (){
+        
+        
+        }
 
         public void deletejadwal(int id)
         {

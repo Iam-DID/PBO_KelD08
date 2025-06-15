@@ -137,7 +137,7 @@ namespace PBO_KelD08.JAPRI.Model
 
         public List<Data_PilihanJadwal> ambiljadwal(int id)
         {
-            DataTable jadwal = Execute_With_Return($"Select pjk.id_pilihan, pjk.tanggal,pjk.jam_mulai,pjk.jam_selesai,r.nama_ruangan from pilihan_jadwal_asisten pjk " +
+            DataTable jadwal = Execute_With_Return($"Select pjk.id_pilihan, pjk.tanggal,pjk.jam_mulai,pjk.jam_selesai,r.nama_ruangan, pjk.note from pilihan_jadwal_asisten pjk " +
                 $"join ruangan r on (pjk.id_ruangan=r.id_ruangan) " +
                 $"where id_kelas= {id}");
             List<Data_PilihanJadwal> list = new List<Data_PilihanJadwal>();
@@ -153,6 +153,7 @@ namespace PBO_KelD08.JAPRI.Model
                     jam_mulai = (TimeSpan)jadwal.Rows[i]["jam_mulai"],
                     jam_selesai = (TimeSpan)jadwal.Rows[i]["jam_selesai"],
                     nama_ruangan = jadwal.Rows[i]["nama_ruangan"].ToString(),
+                    note = jadwal.Rows[i]["note"].ToString(),
                 };
                 list.Add(data_jadwal);
             }

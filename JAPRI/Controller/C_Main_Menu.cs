@@ -8,6 +8,7 @@ namespace PBO_KelD08.JAPRI.Controller
 {
     public class C_Main_Menu
     {
+        //public C_LandingPage LandingController { get; set; }
         public C_Profile ProfileController { get; private set; }
         public C_Info_Kelas InfoKelasController { get; private set; }
         public C_Jadwal JadwalController { get; private set; }
@@ -17,6 +18,7 @@ namespace PBO_KelD08.JAPRI.Controller
         public C_Main_Menu()
         {
             // Inject this ke semua controller
+            //LandingController = new C_LandingPage();
             ProfileController = new C_Profile(this);
             InfoKelasController = new C_Info_Kelas(this);
             JadwalController = new C_Jadwal(this);

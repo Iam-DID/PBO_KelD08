@@ -29,14 +29,14 @@ namespace PBO_KelD08.JAPRI.Controller
 
         }
 
-        public void login_validation()
+        public void login_validation(string nim, string password)
         {
-            if (string.IsNullOrEmpty(v_Login.username.Text) || string.IsNullOrEmpty(v_Login.password.Text))
+            if (string.IsNullOrEmpty(nim) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Harap Isi Form", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            m_Akun.Get(v_Login.username.Text, v_Login.password.Text);
+            m_Akun.Get(nim, password);
             if (M_Session.session_status)
             {
                 if (M_Session.status_asprak)

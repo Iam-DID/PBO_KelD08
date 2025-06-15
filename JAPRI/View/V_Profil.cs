@@ -151,7 +151,8 @@ namespace PBO_KelD08.JAPRI.View
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            //new V_Login_Page(new C_LandingPage()).Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

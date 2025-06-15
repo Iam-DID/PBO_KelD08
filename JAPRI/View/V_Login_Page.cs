@@ -26,7 +26,9 @@ namespace PBO_KelD08.JAPRI.View
 
         private void login_Click(object sender, EventArgs e)
         {
-            Controller.login_validation();
+            string nim = username.Text;
+            string pasword = password.Text;
+            Controller.login_validation(nim,pasword);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
