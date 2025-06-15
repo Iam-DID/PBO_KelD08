@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(V_Profil_Ketua_Kelas_Page));
             button1 = new Button();
             info_kelas_ketua = new Button();
             button4 = new Button();
@@ -40,6 +41,9 @@
             setingprofil = new Button();
             label2 = new Label();
             nama = new Label();
+            foto = new PictureBox();
+            button2 = new Button();
+            ((System.ComponentModel.ISupportInitialize)foto).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -63,6 +67,7 @@
             info_kelas_ketua.Size = new Size(101, 28);
             info_kelas_ketua.TabIndex = 8;
             info_kelas_ketua.UseVisualStyleBackColor = false;
+            info_kelas_ketua.Click += info_kelas_ketua_Click;
             // 
             // button4
             // 
@@ -74,6 +79,7 @@
             button4.Size = new Size(79, 23);
             button4.TabIndex = 12;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // password
             // 
@@ -140,6 +146,7 @@
             Logout.TabIndex = 26;
             Logout.Text = "Log Out";
             Logout.UseVisualStyleBackColor = false;
+            Logout.Click += Logout_Click;
             // 
             // gantipassword
             // 
@@ -154,6 +161,7 @@
             gantipassword.TabIndex = 25;
             gantipassword.Text = "Ganti Password";
             gantipassword.UseVisualStyleBackColor = false;
+            gantipassword.Click += gantipassword_Click;
             // 
             // setingprofil
             // 
@@ -168,6 +176,7 @@
             setingprofil.TabIndex = 24;
             setingprofil.Text = "Setting Profil";
             setingprofil.UseVisualStyleBackColor = false;
+            setingprofil.Click += setingprofil_Click;
             // 
             // label2
             // 
@@ -192,12 +201,43 @@
             nama.TabIndex = 22;
             nama.Text = "Nama";
             // 
+            // foto
+            // 
+            foto.BackColor = Color.Transparent;
+            foto.BackgroundImageLayout = ImageLayout.Zoom;
+            foto.ErrorImage = null;
+            foto.Location = new Point(293, 195);
+            foto.Name = "foto";
+            foto.Size = new Size(100, 100);
+            foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            foto.TabIndex = 31;
+            foto.TabStop = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Transparent;
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            button2.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 12F);
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(370, 273);
+            button2.Name = "button2";
+            button2.Size = new Size(43, 42);
+            button2.TabIndex = 33;
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // V_Profil_Ketua_Kelas_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Profil_ketua;
             ClientSize = new Size(960, 540);
+            Controls.Add(button2);
+            Controls.Add(foto);
             Controls.Add(password);
             Controls.Add(kelaspraktikum);
             Controls.Add(prodi);
@@ -214,6 +254,7 @@
             Name = "V_Profil_Ketua_Kelas_Page";
             Text = "V_Profil_Ketua_Kelas_Page";
             Load += V_Profil_Ketua_Kelas_Page_Load;
+            ((System.ComponentModel.ISupportInitialize)foto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,5 +273,7 @@
         private Button setingprofil;
         private Label label2;
         private Label nama;
+        public PictureBox foto;
+        private Button button2;
     }
 }

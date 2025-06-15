@@ -16,11 +16,16 @@ namespace PBO_KelD08.JAPRI.Controller
         private C_Main_Menu mainMenu;
         public V_Info_Kelas v_info_kelas;
         M_Peserta m_peserta= new M_Peserta();
+        M_PilihanJadwal m_pilihanjadwal = new M_PilihanJadwal();
+        M_Jadwal m_jadwal = new M_Jadwal();
+        V_Info_Kelas_Ketua_Page v_info_kelasketua;
         public C_Info_Kelas(C_Main_Menu mainMenu)
         {
             this.mainMenu = mainMenu;
             v_info_kelas = new V_Info_Kelas(this);
+            v_info_kelasketua = new V_Info_Kelas_Ketua_Page(this);
         }
+
 
         public List<Data_Peserta_Kelas> ambilpeserta()
         {
@@ -61,11 +66,47 @@ namespace PBO_KelD08.JAPRI.Controller
                 v_info_kelas.kelass.Text = "-";
             }
 
+        }
+        public Data_Jadwal datakelasuser()
+        {
+            int id_kelas = mainMenu.ProfileController.getidkelas();
+            Data_Jadwal jadwal = m_jadwal.GetInfoKelasUser(id_kelas);
+            return jadwal;
+        }
 
+        public void updatenote(string note)
+        {
+            int id_kelas = mainMenu.ProfileController.getidkelas();
+            int id_jadwal = m_pilihanjadwal.getidjadwalpengganti(id_kelas);
+
+            DialogResult result = MessageBox.Show("Yakin ingin menyimpan catatan?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                m_pilihanjadwal.updatenotes(note, id_jadwal);
+
+                MessageBox.Show("Catatan berhasil diperbarui.", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public Data_PilihanJadwal GetlistJadwalpengganti ()
+        {
+            int id_kelas = mainMenu.ProfileController.getidkelas();
+            Data_PilihanJadwal data = m_pilihanjadwal.getjadwalpengganti(id_kelas);
+            return data;
+        }
+
+        public Data_Akun GetDatakelas()
+        {
+            Data_Akun data = mainMenu.ProfileController.GetData();
+            return data;
         }
         public void SwitchToProfile()
         {
             mainMenu.SwitchForm(v_info_kelas, mainMenu.ProfileController.GetView());
+        }
+        public void SwitchToInfoProfileKetua()
+        {
+            mainMenu.SwitchForm(v_info_kelasketua, mainMenu.ProfileController.GetViewKetua());
         }
 
         public void SwitchToInfoJadwal()
@@ -86,6 +127,10 @@ namespace PBO_KelD08.JAPRI.Controller
         {
             return v_info_kelas;
 
+        }
+        public Form GetViewKetua() 
+        {
+            return v_info_kelasketua;
         }
     }
 }

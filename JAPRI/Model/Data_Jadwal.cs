@@ -14,6 +14,7 @@ namespace PBO_KelD08.JAPRI.Model
         public string hari;
         public TimeSpan jam_mulai;
         public TimeSpan jam_selesai;
+        public string nama_ruangan;
 
 
 

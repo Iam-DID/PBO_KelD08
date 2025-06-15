@@ -46,7 +46,7 @@ namespace PBO_KelD08.JAPRI.Controller
                 }
                 else
                 {
-
+                    mainMenu.SwitchForm(v_Login, mainMenu.ProfileController.GetViewKetua());
                 }
             }
             else

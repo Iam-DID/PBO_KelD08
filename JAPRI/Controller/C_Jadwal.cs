@@ -37,6 +37,7 @@ namespace PBO_KelD08.JAPRI.Controller
             return list;
         }
 
+
         public void setSemester()
         {
             int id = mainMenu.ProfileController.getidkelas();

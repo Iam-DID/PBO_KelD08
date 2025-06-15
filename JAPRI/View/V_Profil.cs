@@ -29,7 +29,6 @@ namespace PBO_KelD08.JAPRI.View
         private void V_Profil_Load(object sender, EventArgs e)
 
         {
-            //Controller.RefreshForm();
             Controller.RoundPicturebox(foto);
             Data_Akun akun = Controller.GetData();
             byte[] fotoprofil = akun.foto_profil as byte[];

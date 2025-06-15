@@ -22,10 +22,12 @@ namespace PBO_KelD08.JAPRI.Controller
         M_Profil m_profil = new M_Profil();
 
         public V_Profil v_profil;
+        public V_Profil_Ketua_Kelas_Page v_profil_ketua;
 
         public C_Profile(C_Main_Menu C) { 
             this.mainMenu = C;
             v_profil = new V_Profil(this);
+            v_profil_ketua = new V_Profil_Ketua_Kelas_Page(this);
             v_setting_profile_page = new V_Setting_Profile_page(this);
             v_ganti_password_page = new V_Ganti_Password_Page(this);
         }
@@ -33,13 +35,15 @@ namespace PBO_KelD08.JAPRI.Controller
         public int getidkelas()
         {
             Data_Akun data = GetData();
-
-
             return data.id_kelas;
         }
         public void SwitchToInfoKelas()
         {
             mainMenu.SwitchForm(v_profil, mainMenu.InfoKelasController.GetView());
+        }
+        public void SwitchToInfoKelasKetua()
+        {
+            mainMenu.SwitchForm(v_profil_ketua, mainMenu.InfoKelasController.GetViewKetua());
         }
 
         public void SwitchToInfoJadwal()
@@ -55,6 +59,11 @@ namespace PBO_KelD08.JAPRI.Controller
         public void SwitchToGantiJadwal()
         {
             mainMenu.SwitchForm(v_profil, mainMenu.GantiJadwalController.GetView());
+        }
+
+        public Form GetViewKetua()
+        {
+            return v_profil_ketua;
         }
 
         public Form GetView()
@@ -90,30 +99,9 @@ namespace PBO_KelD08.JAPRI.Controller
             };
             return akun;
         }
-        public void Updatekelas() 
+        public void Updatekelas(int id_kelas) 
         {
-            DialogResult result=MessageBox.Show("Apakah Anda yakin ingin melanjutkan?","Konfirmasi",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                Data_Akun akun = GetData();
-                if (v_setting_profile_page.kelaspraktikum.SelectedItem != null)
-                {
-                    int selectedId = Convert.ToInt32(v_setting_profile_page.kelaspraktikum.SelectedValue);
-                    if (akun.id_kelas == 0)
-                    {
-                        m_profil.Updatekelas(selectedId, M_Session.id_session);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Kelas Telah Dipilih dan Tidak Bisa Diganti", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            else
-            {
-            }
-           
+          m_profil.Updatekelas(id_kelas, M_Session.id_session);
         }
         public void RoundPicturebox(PictureBox pb)
         {
@@ -137,12 +125,9 @@ namespace PBO_KelD08.JAPRI.Controller
 
 
         }
-        public void updatepassword()
+        public void updatepassword(string passwordlama,string passwordbaru, string passwordvalidation)
         {
             Data_Akun akun = GetData();
-            string passwordlama = v_ganti_password_page.password.Text;
-            string passwordbaru = v_ganti_password_page.newpassword.Text;
-            string passwordvalidation = v_ganti_password_page.password_validation.Text;
             if (string.IsNullOrEmpty(passwordlama) || string.IsNullOrEmpty(passwordbaru) || passwordbaru != passwordvalidation)
             {
                 MessageBox.Show("Harap Cek Ulang Form", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

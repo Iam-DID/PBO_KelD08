@@ -45,6 +45,8 @@
             button4 = new Button();
             info_kelas_ketua = new Button();
             button2 = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // matakuliah
@@ -156,6 +158,8 @@
             label6.Size = new Size(12, 16);
             label6.TabIndex = 10;
             label6.Text = "-";
+            label6.Click += label6_Click;
+
             // 
             // jammulaipengganti
             // 
@@ -203,6 +207,8 @@
             button1.Size = new Size(53, 24);
             button1.TabIndex = 14;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+
             // 
             // button4
             // 
@@ -214,6 +220,7 @@
             button4.Size = new Size(79, 23);
             button4.TabIndex = 17;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // info_kelas_ketua
             // 
@@ -236,6 +243,15 @@
             button2.Size = new Size(64, 26);
             button2.TabIndex = 15;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(269, 284);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(628, 208);
+            dataGridView1.TabIndex = 18;
             // 
             // V_Info_Kelas_Ketua_Page
             // 
@@ -244,6 +260,7 @@
             BackColor = Color.Gray;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(960, 540);
+            Controls.Add(dataGridView1);
             Controls.Add(button4);
             Controls.Add(info_kelas_ketua);
             Controls.Add(button2);
@@ -264,6 +281,7 @@
             Name = "V_Info_Kelas_Ketua_Page";
             Text = "V_Info_Kelas_Ketua_Page";
             Load += V_Info_Kelas_Ketua_Page_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -286,5 +304,6 @@
         private Button button4;
         private Button info_kelas_ketua;
         private Button button2;
+        private DataGridView dataGridView1;
     }
 }
