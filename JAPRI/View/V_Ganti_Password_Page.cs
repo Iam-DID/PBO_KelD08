@@ -36,8 +36,11 @@ namespace PBO_KelD08.JAPRI.View
         }
 
         private void ubah_Click_1(object sender, EventArgs e)
-        {       
-            Controller.updatepassword();
+        {
+            string passwordlama = password.Text;
+            string passwordbaru = newpassword.Text;
+            string passwordvalidation = password_validation.Text;
+            Controller.updatepassword(passwordlama,passwordbaru,passwordvalidation);
             this.Close();
         }
     }

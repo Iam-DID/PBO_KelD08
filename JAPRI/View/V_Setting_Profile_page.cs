@@ -54,7 +54,25 @@ namespace PBO_KelD08.JAPRI.View
         }
         private void ubah_Click(object sender, EventArgs e)
         {
-            Controller.Updatekelas();
+            DialogResult result = MessageBox.Show("Apakah Anda yakin ingin melanjutkan?", "Konfirmasi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                if (kelaspraktikum.SelectedItem != null)
+                {
+                    Data_Akun akun = Controller.GetData();
+                    int selectedId = Convert.ToInt32(kelaspraktikum.SelectedValue);
+                    if (akun.id_kelas == 0)
+                    {
+                        Controller.Updatekelas(selectedId);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kelas Telah Dipilih dan Tidak Bisa Diganti", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
+                    }
+                }
+            }
             this.Close();
         }
 

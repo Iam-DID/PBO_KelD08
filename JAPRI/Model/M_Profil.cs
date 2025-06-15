@@ -31,8 +31,21 @@ namespace PBO_KelD08.JAPRI.Model
         }
         public DataTable getkelas()
         {
-            DataTable data = Execute_With_Return("Select * from kelas");
-            return data;
+            if (M_Session.status_asprak)
+            {
+                DataTable data = Execute_With_Return("Select * from kelas");
+                return data;
+            }
+            else
+            {
+                DataTable data = Execute_With_Return("Select k.id_kelas, k.nama_kelas, k.kode_mata_kuliah " +
+                    "from kelas k " +
+                    "join peserta_kelas pk on (k.id_kelas=pk.id_kelas) " +
+                    "join mahasiswa m on (pk.nim=m.nim) " +
+                    "join akun a on (m.nim=a.nim) " +
+                    $"where a.id_akun = {M_Session.id_session} ");
+                return data;
+            }
         }
         
         public List<object> Get()

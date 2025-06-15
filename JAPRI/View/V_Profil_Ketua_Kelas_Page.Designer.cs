@@ -40,6 +40,9 @@
             setingprofil = new Button();
             label2 = new Label();
             nama = new Label();
+            updatephoto = new Button();
+            foto = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)foto).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -63,6 +66,7 @@
             info_kelas_ketua.Size = new Size(101, 28);
             info_kelas_ketua.TabIndex = 8;
             info_kelas_ketua.UseVisualStyleBackColor = false;
+            info_kelas_ketua.Click += info_kelas_ketua_Click;
             // 
             // button4
             // 
@@ -74,6 +78,7 @@
             button4.Size = new Size(79, 23);
             button4.TabIndex = 12;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // password
             // 
@@ -140,6 +145,7 @@
             Logout.TabIndex = 26;
             Logout.Text = "Log Out";
             Logout.UseVisualStyleBackColor = false;
+            Logout.Click += Logout_Click;
             // 
             // gantipassword
             // 
@@ -154,6 +160,7 @@
             gantipassword.TabIndex = 25;
             gantipassword.Text = "Ganti Password";
             gantipassword.UseVisualStyleBackColor = false;
+            gantipassword.Click += gantipassword_Click;
             // 
             // setingprofil
             // 
@@ -168,6 +175,7 @@
             setingprofil.TabIndex = 24;
             setingprofil.Text = "Setting Profil";
             setingprofil.UseVisualStyleBackColor = false;
+            setingprofil.Click += setingprofil_Click;
             // 
             // label2
             // 
@@ -192,12 +200,43 @@
             nama.TabIndex = 22;
             nama.Text = "Nama";
             // 
+            // updatephoto
+            // 
+            updatephoto.BackColor = Color.Transparent;
+            updatephoto.BackgroundImageLayout = ImageLayout.Zoom;
+            updatephoto.FlatAppearance.BorderSize = 0;
+            updatephoto.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            updatephoto.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            updatephoto.FlatStyle = FlatStyle.Flat;
+            updatephoto.Font = new Font("Segoe UI", 12F);
+            updatephoto.Location = new Point(380, 280);
+            updatephoto.Name = "updatephoto";
+            updatephoto.Size = new Size(23, 31);
+            updatephoto.TabIndex = 32;
+            updatephoto.Text = "+";
+            updatephoto.UseVisualStyleBackColor = false;
+            updatephoto.Click += updatephoto_Click;
+            // 
+            // foto
+            // 
+            foto.BackColor = Color.Transparent;
+            foto.BackgroundImageLayout = ImageLayout.Zoom;
+            foto.ErrorImage = null;
+            foto.Location = new Point(293, 195);
+            foto.Name = "foto";
+            foto.Size = new Size(100, 100);
+            foto.SizeMode = PictureBoxSizeMode.StretchImage;
+            foto.TabIndex = 31;
+            foto.TabStop = false;
+            // 
             // V_Profil_Ketua_Kelas_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Profil_ketua;
             ClientSize = new Size(960, 540);
+            Controls.Add(updatephoto);
+            Controls.Add(foto);
             Controls.Add(password);
             Controls.Add(kelaspraktikum);
             Controls.Add(prodi);
@@ -213,6 +252,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "V_Profil_Ketua_Kelas_Page";
             Text = "V_Profil_Ketua_Kelas_Page";
+            Load += V_Profil_Ketua_Kelas_Page_Load;
+            ((System.ComponentModel.ISupportInitialize)foto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -231,5 +272,7 @@
         private Button setingprofil;
         private Label label2;
         private Label nama;
+        private Button updatephoto;
+        public PictureBox foto;
     }
 }

@@ -16,11 +16,14 @@ namespace PBO_KelD08.JAPRI.Controller
         private C_Main_Menu mainMenu;
         public V_Info_Kelas v_info_kelas;
         M_Peserta m_peserta= new M_Peserta();
+        V_Info_Kelas_Ketua_Page v_info_kelasketua;
         public C_Info_Kelas(C_Main_Menu mainMenu)
         {
             this.mainMenu = mainMenu;
             v_info_kelas = new V_Info_Kelas(this);
+            v_info_kelasketua = new V_Info_Kelas_Ketua_Page(this);
         }
+
 
         public List<Data_Peserta_Kelas> ambilpeserta()
         {
@@ -67,6 +70,10 @@ namespace PBO_KelD08.JAPRI.Controller
         {
             mainMenu.SwitchForm(v_info_kelas, mainMenu.ProfileController.GetView());
         }
+        public void SwitchToInfoProfileKetua()
+        {
+            mainMenu.SwitchForm(v_info_kelasketua, mainMenu.ProfileController.GetViewKetua());
+        }
 
         public void SwitchToInfoJadwal()
         {
@@ -86,6 +93,10 @@ namespace PBO_KelD08.JAPRI.Controller
         {
             return v_info_kelas;
 
+        }
+        public Form GetViewKetua() 
+        {
+            return v_info_kelasketua;
         }
     }
 }
