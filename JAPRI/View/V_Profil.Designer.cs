@@ -253,6 +253,7 @@
             foto.SizeMode = PictureBoxSizeMode.StretchImage;
             foto.TabIndex = 22;
             foto.TabStop = false;
+            foto.Click += foto_Click;
             // 
             // updatephoto
             // 
@@ -263,11 +264,11 @@
             updatephoto.FlatAppearance.MouseOverBackColor = Color.Transparent;
             updatephoto.FlatStyle = FlatStyle.Flat;
             updatephoto.Font = new Font("Segoe UI", 12F);
-            updatephoto.Location = new Point(380, 280);
+            updatephoto.Image = (Image)resources.GetObject("updatephoto.Image");
+            updatephoto.Location = new Point(370, 273);
             updatephoto.Name = "updatephoto";
-            updatephoto.Size = new Size(23, 31);
+            updatephoto.Size = new Size(43, 42);
             updatephoto.TabIndex = 23;
-            updatephoto.Text = "+";
             updatephoto.UseVisualStyleBackColor = false;
             updatephoto.Click += updatephoto_Click;
             // 
