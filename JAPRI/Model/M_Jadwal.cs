@@ -46,7 +46,7 @@ namespace PBO_KelD08.JAPRI.Model
                $"From jadwal_kelas jk " +
                $"join kelas k on (jk.id_jadwal=k.id_jadwal) " +
                $"join ruangan r on (jk.id_ruangan = r.id_ruangan) " +
-               $"where jk.id_ruangan = {id} ");
+               $"where k.id_kelas = {id} ");
             Data_Jadwal data_jadwal = new Data_Jadwal
             {
                 id_jadwal = (int)data.Rows[0]["id_jadwal"],

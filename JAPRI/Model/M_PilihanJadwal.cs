@@ -169,13 +169,16 @@ namespace PBO_KelD08.JAPRI.Model
         }
         public DataTable GetDurasi(int id)
         {
-            DataTable data = Execute_With_Return("Select jk.jam_mulai, jk.jam_selesai " +
-                "From jadwal_kelas jk " +
-                "join kelas k on (jk.id_jadwal=k.id_jadwal) " +
-                $"where k.id_kelas = {id}");
+            string query = @"
+        SELECT jk.jam_mulai, jk.jam_selesai 
+        FROM kelas k
+        JOIN jadwal_kelas jk ON k.id_jadwal = jk.id_jadwal
+        WHERE k.id_kelas = @id AND k.id_jadwal IS NOT NULL
+    ";
+            DataTable data = Execute_With_Return(query.Replace("@id", id.ToString()));
 
             return data;
-
+           
         }
         public void Update(object data, int id)
         {
